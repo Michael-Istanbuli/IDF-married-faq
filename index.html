@@ -502,22 +502,13 @@ function buildPanels(){
     +'<b>'+o.title+'</b><br><span style="color:var(--text3);font-size:12px">'+o.collection+'</span></div>').join("");
 }
 
-// Reveal elements with a gentle upward fade as they enter the viewport.
+// Gentle one-time fade-up on load; reveals ALL items right away — never
+// gates content behind scrolling.
 const REDUCE = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-let _io=null;
-function getIO(){
-  if(!_io && 'IntersectionObserver' in window){
-    _io=new IntersectionObserver((entries)=>{
-      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); _io.unobserve(en.target); } });
-    },{rootMargin:'0px 0px -8% 0px'});
-  }
-  return _io;
-}
 function reveal(nodes, animate){
   const els=[...nodes];
-  const o=getIO();
-  if(REDUCE || !o || animate===false){ els.forEach(el=>el.classList.add('in')); return; }
-  els.forEach(el=>o.observe(el));
+  if(REDUCE || animate===false){ els.forEach(el=>el.classList.add('in')); return; }
+  requestAnimationFrame(()=>els.forEach(el=>el.classList.add('in')));
 }
 
 document.getElementById('q').addEventListener('input',e=>{term=e.target.value.trim();render(false);});
