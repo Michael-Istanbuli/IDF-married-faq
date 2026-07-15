@@ -128,6 +128,51 @@
   footer{color:var(--text3);font-size:12.5px;text-align:center;padding:30px 22px 50px;
     max-width:780px;margin:0 auto;line-height:1.6;}
 
+  /* smart-search quick answer */
+  #quick{margin:16px 0 2px;}
+  .qa{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--hair);
+    border-radius:16px;padding:15px 18px 16px;box-shadow:var(--shadow);
+    animation:rise .5s var(--ease) both;}
+  .qa::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:var(--blue);}
+  .qa-h{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+  .qa-badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#fff;
+    background:var(--blue);border-radius:980px;padding:3px 11px;letter-spacing:.01em;}
+  .qa-ref{font-size:12px;color:var(--text3);}
+  .qa-body{font-size:16px;line-height:1.5;color:var(--text);}
+  .qa-link{margin-top:12px;border:0;background:var(--chip);color:var(--link);font-weight:600;font-size:13.5px;
+    border-radius:980px;padding:7px 15px;cursor:pointer;font-family:inherit;transition:background .2s;}
+  .qa-link:hover{background:var(--chip-hover);}
+
+  /* friendly summary line atop each answer */
+  .sum{font-size:16px;line-height:1.5;color:var(--text);background:var(--soft);
+    border-radius:12px;padding:12px 14px;}
+
+  /* inline bar chart */
+  .chart{margin:15px 0 6px;display:flex;flex-direction:column;gap:10px;}
+  .chart-cap{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:1px;}
+  .chart-row{display:flex;align-items:center;gap:10px;font-size:13.5px;}
+  .chart-lab{flex:0 0 44%;color:var(--text2);line-height:1.3;}
+  .chart-track{flex:1;height:12px;background:var(--soft);border-radius:980px;overflow:hidden;}
+  .chart-bar{display:block;height:100%;background:var(--blue);border-radius:980px;
+    width:var(--w,0%);animation:grow 1s var(--ease) both;}
+  @keyframes grow{from{width:0;}to{width:var(--w,0%);}}
+  .chart-val{flex:none;font-weight:600;color:var(--text);white-space:nowrap;min-width:50px;text-align:start;}
+
+  /* mini live calculator */
+  .calc{margin:15px 0 6px;background:var(--soft);border:1px solid var(--hair);border-radius:14px;padding:14px 15px;}
+  .calc-h{font-size:14px;font-weight:600;margin-bottom:9px;}
+  .calc-in{width:100%;padding:10px 13px;border:1px solid var(--hair);border-radius:10px;font-size:16px;
+    background:var(--panel);color:var(--text);font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;}
+  .calc-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,204,.15);}
+  .calc-out{display:flex;align-items:baseline;gap:11px;margin-top:12px;}
+  .calc-pct{font-size:30px;font-weight:600;letter-spacing:-.02em;color:var(--blue);min-width:62px;}
+  .calc-note{font-size:14px;color:var(--text2);}
+  .calc-fine{font-size:11.5px;color:var(--text3);margin-top:9px;line-height:1.4;}
+
+  /* sourced enrichment note */
+  .note{font-size:14px;color:var(--text2);border-inline-start:2px solid var(--hair);
+    padding-inline-start:11px;margin:11px 0 2px;line-height:1.5;}
+
   @media(min-width:640px){.panel .grid{grid-template-columns:1fr 1fr;}}
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important;animation:none!important;}
@@ -140,7 +185,7 @@
   <p class="eyebrow">קבוצת &quot;זכויות נשואים בצה&quot;ל&quot; ⚖️💍</p>
   <h1>זכויות החייל/ת הנשוי/אה בצה״ל</h1>
   <p class="lede">מדריך שאלות ותשובות · חיפוש חכם · קישור לפקודות הרשמיות</p>
-  <p class="ver">גרסה 2.0 · עדכון יולי 2026</p>
+  <p class="ver">גרסה 2.1 · עדכון יולי 2026 · חיפוש חכם, תרשימים ומחשבון</p>
 </div></header>
 
 <div class="toolbar">
@@ -154,6 +199,7 @@
 </div>
 
 <div class="wrap">
+  <div id="quick" hidden></div>
   <div class="count" id="count"></div>
 
   <main>
@@ -191,6 +237,101 @@ const CATN = {}; DB.categories.forEach(c=>CATN[c.id]=c.name);
 const LET = DB.catLetters;
 let activeCat = "all", term = "";
 
+/* ---------- friendly one-line summaries (used as quick answers + TL;DR) ---------- */
+const SUM = {
+ 1:"תשלום חודשי מצה״ל לחייל/ת נשוי/אה בשירות חובה שנועד להבטיח רמת מחיה בסיסית. מוגש בבקשה, והזכאות תלויה בהכנסת בן/בת הזוג.",
+ 2:"הסכום תלוי ב״תקרה״ לפי מצב בן/בת הזוג (אם לילד, הריון, סטודנט/ית ועוד) ויורד ככל שההכנסה גבוהה יותר. התקרה המלאה נעה בין כ־3,400 לכ־6,900 ₪.",
+ 3:"מחשבים: תקרה פחות 70% מההכנסה נטו של בן/בת הזוג. ככל שההכנסה גבוהה יותר — אחוז הזכאות יורד במדרגות עד 0%.",
+ 4:"עו״ש וחסכונות של עד כ־42,000 ₪ אינם משפיעים. מעבר לכך, כל 150 ₪ נחשבים כ־1 ₪ הכנסה נוספת.",
+ 5:"יש מסלול נפרד לסטודנט/ית עם תקרות נמוכות יותר לפי היקף הלימודים. שנת מכינה אינה נחשבת.",
+ 6:"כן — חובה לדווח על כל שינוי בהכנסה (ירידה או עלייה), אחרת אפשר להיתבע להחזר.",
+ 7:"מגיעים עם תעודת נישואין: משרד הת״ש מטפל בכסף, השלישות בפרטים הטכניים. טיפול עד כ־14 ימי עסקים, בירורים ב־1111.",
+ 8:"חייל נשוי ששוכר דירה/משלם משכנתא ואינו זכאי לתשמ״ש מקבל אוטומטית השתתפות בשכר דירה.",
+ 9:"זכאי תשמ״ש ברמת פעילות מתאימה מקבל גם 50% מתקרת שכר הדירה. קבלת תשמ״ש אינה מבטיחה אוטומטית את שאר ההטבות.",
+ 10:"זוג ששני בני הזוג חיילי חובה מקבל כפל: אחד תשמ״ש, השני שכר דירה בתקרה מלאה — הטבה אחת לכל אחד.",
+ 11:"מי שאינו זכאי לשכ״ד/תשמ״ש מקבל השתתפות באחזקת דירה; בעל דירה על שמו (בלי משכנתא/השכרה) מקבל 100%.",
+ 12:"הורה לילד עד גיל 5 בגן טרום־חובה זכאי להחזר של 580 ₪ לילד, עד 11 חודשים, כנגד קבלות.",
+ 13:"מענק חד־פעמי אוטומטי בגובה 100% משכר טוראי (כ־1,260 ₪) עם ההכרה בנישואין.",
+ 14:"מענק חד־פעמי בגובה 100% משכר טוראי (כ־1,260 ₪) על כל לידה — בנפרד ממענק הלידה של ביטוח לאומי.",
+ 15:"300 ₪ תווי קנייה בכל חודש (רמ״פ א׳ ומעלה, או ב׳ ואב לילד), ללא תלות בתשמ״ש, דרך אפליקציית סיבוס.",
+ 16:"זכאי תשמ״ש מקבל תו זהב לקראת חגי תשרי וניסן בכל שנה.",
+ 17:"10 ימי חופשה לרגל החתונה; אפשר לנצל מחודש לפני ועד 3 חודשים אחרי.",
+ 18:"עד 7 ימי חופשה לבדיקות/טיפולים בהריון בת הזוג, על חשבון ״מיוחדת משפחתית״.",
+ 19:"4–8 ימי חופשה ללידה/אימוץ; מחודש לפני הלידה המשוערת עד חודש אחרי, וניתן לפצל.",
+ 20:"טיפולי פוריות: חייל 12 ימים, חיילת 16; ליווי בן/בת הזוג — 5 ימים.",
+ 21:"מחלת בן/בת זוג — עד 6 ימים; מחלת/אשפוז ילד — 4–8 ימים בשנה; מחלה ממארת של ילד — עד 60 יום.",
+ 22:"יום שלם בבית (24 שעות) לסידורים — ליחידה סגורה, ולהורה לילד בכל רמת פעילות.",
+ 23:"אב לילד זכאי להת״ש 03 (3 לינות בבית בשבוע) בלי אישורים; בערבי חג משתחררים עד 17:30.",
+ 24:"3 חודשי התארגנות עם הטבות בודד, והתשמ״ש לא ייפול משכר הבודד. יש כללי זמן לגבי הטבות בודד משוחרר.",
+ 25:"כן — ההוראה חלה על נשוי ועל ידוע/ה בציבור כאחד. לעדכון הסטטוס פונים לשלישות/ת״ש עם מסמכים.",
+ 26:"הורה לילד עם 50%+ נכות יכול להזין אינדיקציה; לידה שקטה משבוע 22 — פנייה למעטפת הפרט.",
+ 27:"רואים ומממשים דרך 4 מערכות: ת״ש בטאץ׳ (הטבות), סיבוס (תווים), רב־קו (נסיעות), מופת (תלוש).",
+ 28:"מעבר לתווים, מתפרסמים מדי פעם שוברים והנחות צרכניות ייעודיים לחיילים נשואים.",
+ 29:"הנחה של עד 100% בארנונה (על 70 מ״ר) מהרשות המקומית — לא מצה״ל — בתנאי שהחשבון על שמכם ואתם גרים שם בפועל.",
+ 30:"מענק שחרור = מזומן חופשי; פיקדון אישי = כסף לשימושים מוכרים (לימודים/דיור/עסק), ומשתחרר אחרי 5 שנים."
+};
+
+/* ---------- search synonyms / slang / spelling variants ---------- */
+const SYN = [
+ ["כסף","סכום","כמה","תשלום","משכורת","מקבלים","שכר","עולה","גובה"],
+ ["חתונה","נישואין","להתחתן","מתחתן","חתן","כלה","אירוע","להתחתנת"],
+ ["דירה","שכירות","שכד","שכר דירה","משכנתא","דיור","בית","מגורים","שוכר"],
+ ["חופש","חופשה","ימים","חופשות","ימי חופשה"],
+ ["לידה","תינוק","נולד","יולדת","ללדת","נולדה","לידת"],
+ ["הריון","בהריון","הרה","בדיקות","אולטרסאונד"],
+ ["פוריות","הפריה","טיפולי פוריות","מרפאת פוריות","הפריות"],
+ ["גן","גנים","מעון","מעונות","גנון","פעוטון","החזר גן"],
+ ["תווים","תו","שוברים","סיבוס","פלוקסי","קנייה","תלושים","וואוצ","מתנה"],
+ ["ארנונה","עירייה","רשות מקומית","מסים","מס עירוני","הנחה בארנונה"],
+ ["בודד","חייל בודד","בודדים"],
+ ["ידוע בציבור","ידועה בציבור","ידועים בציבור","זוגיות","בן זוג"],
+ ["מענק","מענקים","בונוס"],
+ ["שחרור","משתחרר","פיקדון","מענק שחרור","פקדון"],
+ ["סטודנט","סטודנטית","לימודים","תואר","אוניברסיטה","מכללה","מכינה"],
+ ["חסכונות","חיסכון","עוש","הון","מניות","השקעות","כסף בבנק"],
+ ["מחלה","חולה","אשפוז","מאושפז","חולים","ממארת"],
+ ["מוגבלות","נכות","נכה","צרכים מיוחדים"],
+ ["הכנסה","ברוטו","נטו","משתכר","מרוויח","מבחן הכנסה","תלוש"],
+ ["רמפ","רמת פעילות","רמפ א","רמפ ב"],
+ ["אפליקציה","אפליקציות","מופת","רבקו","רב קו","בטאץ","אזור אישי"],
+ ["התש","הת ש","לינה","לינת בית","לישון בבית","ישן בבית"],
+ ["זכויות","הטבות","מגיע לי","מיצוי זכויות"]
+];
+const SYNN = SYN.map(g=>g.map(norm));
+
+/* ---------- sourced enrichments (appended to answers; additive, never overwriting) ---------- */
+const ENRICH = {
+ 13:'<p class="note">בפועל מדובר בכ־<strong>1,260 ₪</strong> (100% משכר טוראי, מתעדכן לפי המדד). לפי מקורות ציבוריים (כל־זכות).</p>',
+ 14:'<p class="note">הסכום כ־<strong>1,260 ₪</strong> לכל לידה (100% משכר טוראי). חשוב: זהו מענק של צה״ל, <strong>בנפרד</strong> ממענק הלידה של המוסד לביטוח לאומי המשולם להורה. (כל־זכות / ביטוח לאומי)</p>',
+ 23:'<p class="note">להת״ש 03 נלווית לרוב גם <strong>הצבה עד כ־100 ק״מ</strong> מהבית, ככל שהדבר מתאפשר מבצעית. (מקור: הנחיות את״צ / כל־זכות)</p>',
+ 29:'<p class="note">ממקורות ציבוריים: ההנחה חלה גם עד <strong>4 חודשים לאחר השחרור</strong>; היא ניתנת על <strong>70 מ״ר</strong> (ו־<strong>90 מ״ר</strong> למשק בית של 5 נפשות ומעלה), ורק לדירה שאתם גרים בה בפועל ורשומים בה. נדרש אישור שירות מקצין העיר/השלישות. (מקור: כל־זכות; תקנות ההנחה מארנונה)</p>'
+};
+
+/* ---------- inline charts + interactive example ---------- */
+const CHART = {
+ 2:{cap:"תקרות הזכאות המלאה (100%)", rows:[
+   {label:"אם לילד / הריון (משבוע 32)", value:6861, disp:"6,861 ₪"},
+   {label:"הריון 14 / עובדת / לומדת / עולה", value:5489, disp:"5,489 ₪"},
+   {label:"חיילת / שירות לאומי / סטודנטית 30+", value:5146, disp:"5,146 ₪"},
+   {label:"סטודנטית 16–29 שע׳", value:3431, disp:"3,431 ₪"}
+ ], max:6861},
+ 3:{cap:"אחוז זכאות לפי הכנסה ברוטו (דוגמת ״אם לילד״)", unit:"%", rows:[
+   {label:"עד 6,858 ₪", value:100, disp:"100%"},
+   {label:"6,858–8,000", value:88, disp:"88%"},
+   {label:"8,001–10,000", value:66, disp:"66%"},
+   {label:"10,001–12,494", value:33, disp:"33%"},
+   {label:"מעל 12,494", value:0, disp:"0%"}
+ ], max:100}
+};
+
+/* merge the extra layers into the data without touching the source JSON */
+DB.items.forEach(it=>{
+  if(SUM[it.id]) it.sum=SUM[it.id];
+  if(ENRICH[it.id]) it.a+=ENRICH[it.id];
+  if(CHART[it.id]) it.chart=CHART[it.id];
+});
+(DB.items.find(x=>x.id===3)||{}).calc=true;
+
 function norm(s){return (s||"").replace(/["'׳״]/g,"").toLowerCase();}
 function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 
@@ -226,12 +367,92 @@ function buildChips(){
   el.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{activeCat=ch.dataset.c;buildChips();render(false);});
 }
 
+// Does a query word match a haystack — directly or via a synonym group?
+function wordMatches(w, hay){
+  if(hay.includes(w)) return true;
+  if(w.length<2) return false;
+  for(const g of SYNN){
+    if(g.some(t=> t===w || (t.length>=2 && (t.includes(w)||w.includes(t))) )){
+      if(g.some(t=> t.length>1 && hay.includes(t))) return true;
+    }
+  }
+  return false;
+}
+function itemHay(it){
+  return norm(it.q+" "+(it.sum||"")+" "+it.a.replace(/<[^>]+>/g," ")+" "+(it.keywords||"")+" "+CATN[it.cat]);
+}
 function matches(it){
   if(activeCat!=="all" && it.cat!==activeCat) return false;
   if(!term) return true;
   const words = norm(term).split(/\s+/).filter(Boolean);
-  const hay = norm(it.q+" "+it.a.replace(/<[^>]+>/g," ")+" "+(it.keywords||"")+" "+CATN[it.cat]);
-  return words.every(w=>hay.includes(w));
+  const hay = itemHay(it);
+  return words.every(w=>wordMatches(w,hay));
+}
+
+// Relevance score for choosing the best "quick answer".
+function scoreItem(it, words){
+  const q=norm(it.q), s=norm(it.sum||""), k=norm((it.keywords||"")+" "+CATN[it.cat]);
+  let sc=0;
+  words.forEach(w=>{ if(wordMatches(w,q))sc+=3; else if(wordMatches(w,s))sc+=2; else if(wordMatches(w,k))sc+=1; });
+  return sc;
+}
+function stripTags(h){return h.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();}
+
+// AI-style instant summary card above the results.
+function quickAnswer(list, words){
+  const box=document.getElementById('quick');
+  if(!term || !list.length){ box.hidden=true; box.innerHTML=''; return; }
+  let best=list[0], bs=-1;
+  list.forEach(it=>{ const sc=scoreItem(it,words); if(sc>bs){bs=sc;best=it;} });
+  box.hidden=false;
+  box.innerHTML='<div class="qa"><div class="qa-h">'
+    +'<span class="qa-badge">✦ תשובה מהירה</span><span class="qa-ref">מבוסס על שאלה '+best.id+'</span></div>'
+    +'<div class="qa-body">'+esc(best.sum||stripTags(best.a).slice(0,200))+'</div>'
+    +'<button class="qa-link" type="button" data-go="'+best.id+'">לתשובה המלאה ↓</button></div>';
+  box.querySelector('.qa-link').onclick=()=>{
+    const card=document.querySelector('.card[data-id="'+best.id+'"]');
+    if(!card) return;
+    card.classList.add('open','in');
+    const b=card.querySelector('button'); if(b) b.setAttribute('aria-expanded','true');
+    card.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'center'});
+  };
+}
+
+// Horizontal bar chart (CSS bars — responsive, theme-aware, no libraries).
+function renderChart(spec){
+  const max=spec.max||Math.max.apply(null,spec.rows.map(r=>r.value))||1;
+  let h='<div class="chart">'+(spec.cap?'<div class="chart-cap">'+esc(spec.cap)+'</div>':'');
+  spec.rows.forEach(r=>{
+    const w=r.value<=0?0:Math.max(4,Math.round(r.value/max*100));
+    h+='<div class="chart-row"><span class="chart-lab">'+esc(r.label)+'</span>'
+      +'<span class="chart-track"><span class="chart-bar" style="--w:'+w+'%"></span></span>'
+      +'<span class="chart-val">'+esc(r.disp)+'</span></div>';
+  });
+  return h+'</div>';
+}
+
+// Illustrative eligibility % from gross income (matches the Q3 brackets).
+function calcPct(v){
+  if(!(v>=0)) return null;
+  if(v<=6858) return 100; if(v<=8000) return 88; if(v<=10000) return 66; if(v<=12494) return 33; return 0;
+}
+function calcWidget(){
+  return '<div class="calc"><div class="calc-h">בדקו לבד — הכנסת בן/בת הזוג (ברוטו, ₪):</div>'
+    +'<input class="calc-in" type="number" inputmode="numeric" min="0" step="100" placeholder="למשל 9,000" aria-label="הכנסה חודשית ברוטו">'
+    +'<div class="calc-out"><span class="calc-pct">—</span><span class="calc-note">הזינו סכום לחישוב מקורב</span></div>'
+    +'<div class="calc-fine">הערכה להמחשה בלבד לפי מדרגות ״אם לילד״. החישוב המחייב — במחשבון הרשמי של הקבוצה.</div></div>';
+}
+function wireCalc(scope){
+  scope.querySelectorAll('.calc').forEach(box=>{
+    const inp=box.querySelector('.calc-in'), pct=box.querySelector('.calc-pct'), note=box.querySelector('.calc-note');
+    inp.addEventListener('input',()=>{
+      const v=parseFloat((inp.value||'').replace(/[^\d.]/g,''));
+      const p=calcPct(v);
+      if(p===null){pct.textContent='—';note.textContent='הזינו סכום לחישוב מקורב';return;}
+      pct.textContent=p+'%';
+      note.textContent = p===100?'זכאות מלאה משוערת':(p===0?'קרוב לוודאי לא זכאי/ת':'זכאות חלקית משוערת');
+    });
+  });
 }
 
 function ordChips(it){
@@ -244,18 +465,22 @@ function ordChips(it){
 function render(animate){
   const res=document.getElementById('results');
   const list=DB.items.filter(matches);
+  const words = norm(term).split(/\s+/).filter(Boolean);
   document.getElementById('count').textContent=
     list.length+" מתוך "+DB.items.length+" שאלות"+(term?' · חיפוש: "'+term+'"':"");
+  quickAnswer(list, words);
   if(!list.length){res.innerHTML='<div class="empty">לא נמצאו תוצאות. נסו מילת חיפוש אחרת או בחרו קטגוריה.</div>';return;}
   res.innerHTML=list.map(it=>{
     const q=highlight(esc(it.q),term);
+    const sum=it.sum?'<div class="sum">'+highlight(esc(it.sum),term)+'</div>':'';
     const a=highlight(it.a,term);
+    const extra=(it.chart?renderChart(it.chart):'')+(it.calc?calcWidget():'');
     return '<div class="card" data-id="'+it.id+'">'
       +'<button aria-expanded="false"><span class="qn">'+it.id+'</span>'
       +'<span class="qhead"><span class="cattag">'+LET[it.cat]+' · '+CATN[it.cat]+'</span>'
       +'<span class="qtext">'+q+'</span></span>'
       +'<span class="arrow"></span></button>'
-      +'<div class="ans"><div class="ans-in"><div class="ans-body">'+a
+      +'<div class="ans"><div class="ans-in"><div class="ans-body">'+sum+a+extra
       +'<div class="meta-row"><span class="src">'+esc(it.src)+'</span>'+ordChips(it)+'</div>'
       +'</div></div></div></div>';
   }).join("");
@@ -265,6 +490,7 @@ function render(animate){
   });
   // auto-open if searching and few results
   if(term && list.length<=3) res.querySelectorAll('.card').forEach(c=>c.classList.add('open'));
+  wireCalc(res);
   reveal(res.querySelectorAll('.card'), animate);
 }
 
