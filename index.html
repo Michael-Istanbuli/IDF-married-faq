@@ -11,16 +11,16 @@
   body{margin:0;font-family:"Segoe UI","Arial Hebrew",Arial,system-ui,sans-serif;
     background:var(--bg);color:var(--ink);line-height:1.6;}
   a{color:var(--brand-2);}
-  header{background:linear-gradient(135deg,#1f4e79,#2c6aa0);color:#fff;padding:26px 18px 22px;
-    overflow:hidden;transition:max-height .35s ease,padding .35s ease,opacity .3s ease;max-height:400px;}
-  header.collapsed{max-height:0;padding-top:0;padding-bottom:0;opacity:0;}
+  header{background:linear-gradient(135deg,#1f4e79,#2c6aa0);color:#fff;padding:26px 18px 22px;}
   .wrap{max-width:880px;margin:0 auto;padding:0 16px;}
   header .badge{display:inline-block;border:1.5px solid rgba(255,255,255,.6);
     border-radius:999px;padding:4px 14px;font-size:13px;margin-bottom:12px;}
   header h1{margin:0 0 4px;font-size:26px;}
   header p{margin:0;opacity:.9;font-size:14px;}
   .searchbar{position:sticky;top:0;z-index:20;background:var(--bg);
-    padding:14px 0 8px;box-shadow:0 6px 14px -12px rgba(0,0,0,.4);}
+    padding:14px 0 8px;box-shadow:0 6px 14px -12px rgba(0,0,0,.4);
+    transition:transform .3s ease;}
+  .searchbar.hidden{transform:translateY(-110%);}
   .searchbox{position:relative;}
   .searchbox input{width:100%;padding:14px 46px 14px 16px;border:2px solid var(--line);
     border-radius:12px;font-size:16px;background:#fff;outline:none;transition:.15s;}
@@ -211,14 +211,16 @@ function buildPanels(){
 
 document.getElementById('q').addEventListener('input',e=>{term=e.target.value.trim();render();});
 
-// Auto-hide the header (badge/title/tags) when scrolling down; reveal on scroll up or near top.
+// Auto-hide the sticky search bar (search box + category tags) when scrolling
+// down; reveal it on scroll up or near the top. Uses transform only, so there
+// is no layout reflow to fight the scroll-direction detection.
 (function(){
-  const hdr=document.querySelector('header');
+  const bar=document.querySelector('.searchbar');
   let lastY=window.scrollY, ticking=false;
   function onScroll(){
     const y=window.scrollY;
-    if(y>70 && y>lastY+4){ hdr.classList.add('collapsed'); }
-    else if(y<lastY-4 || y<=70){ hdr.classList.remove('collapsed'); }
+    if(y>90 && y>lastY+4){ bar.classList.add('hidden'); }
+    else if(y<lastY-4 || y<=90){ bar.classList.remove('hidden'); }
     lastY=y; ticking=false;
   }
   window.addEventListener('scroll',()=>{
