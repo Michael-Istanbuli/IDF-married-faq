@@ -11,7 +11,9 @@
   body{margin:0;font-family:"Segoe UI","Arial Hebrew",Arial,system-ui,sans-serif;
     background:var(--bg);color:var(--ink);line-height:1.6;}
   a{color:var(--brand-2);}
-  header{background:linear-gradient(135deg,#1f4e79,#2c6aa0);color:#fff;padding:26px 18px 22px;}
+  header{background:linear-gradient(135deg,#1f4e79,#2c6aa0);color:#fff;padding:26px 18px 22px;
+    overflow:hidden;transition:max-height .35s ease,padding .35s ease,opacity .3s ease;max-height:400px;}
+  header.collapsed{max-height:0;padding-top:0;padding-bottom:0;opacity:0;}
   .wrap{max-width:880px;margin:0 auto;padding:0 16px;}
   header .badge{display:inline-block;border:1.5px solid rgba(255,255,255,.6);
     border-radius:999px;padding:4px 14px;font-size:13px;margin-bottom:12px;}
@@ -208,6 +210,22 @@ function buildPanels(){
 }
 
 document.getElementById('q').addEventListener('input',e=>{term=e.target.value.trim();render();});
+
+// Auto-hide the header (badge/title/tags) when scrolling down; reveal on scroll up or near top.
+(function(){
+  const hdr=document.querySelector('header');
+  let lastY=window.scrollY, ticking=false;
+  function onScroll(){
+    const y=window.scrollY;
+    if(y>70 && y>lastY+4){ hdr.classList.add('collapsed'); }
+    else if(y<lastY-4 || y<=70){ hdr.classList.remove('collapsed'); }
+    lastY=y; ticking=false;
+  }
+  window.addEventListener('scroll',()=>{
+    if(!ticking){ ticking=true; requestAnimationFrame(onScroll); }
+  },{passive:true});
+})();
+
 buildChips(); buildPanels(); render();
 </script>
 </body>
