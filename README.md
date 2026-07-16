@@ -2,7 +2,7 @@
 
 מדריך שאלות ותשובות בעברית לחיילים ולחיילות נשואים בשירות חובה: תשלומי משפחה, דיור, מענקים, חופשות והטבות.
 
-[למדריך החי](https://michael-istanbuli.github.io/idf-married-faq/)
+[למדריך החי](https://michael-istanbuli.github.io/IDF-married-faq/)
 
 ## עקרונות הפרויקט
 
