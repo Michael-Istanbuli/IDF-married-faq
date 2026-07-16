@@ -118,6 +118,10 @@
   .meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;}
   .src{font-size:12px;color:var(--text2);background:var(--soft);border-radius:8px;padding:5px 11px;}
   .ord{font-size:12px;color:var(--link);background:var(--soft);border-radius:8px;padding:5px 11px;font-weight:500;}
+  .copy{font-size:12px;color:var(--link);background:var(--soft);border:0;border-radius:8px;padding:5px 11px;
+    font-weight:500;cursor:pointer;font-family:inherit;min-height:44px;transition:background .2s;}
+  .copy:hover{background:var(--chip-hover);}
+  .copy.ok{color:var(--text2);}
   .ord:hover{background:var(--chip-hover);text-decoration:none;}
   mark{background:var(--mark);color:inherit;border-radius:4px;padding:0 2px;}
   .empty{text-align:center;color:var(--text2);padding:60px 20px;font-size:17px;}
@@ -967,7 +971,8 @@ function renderItem(it, headingLevel=4){
     +'<span class="arrow" aria-hidden="true"></span><span class="qn" aria-hidden="true">'+String(it.id).padStart(2,'0')+'</span></button></'+headingTag+'>'
     +'<div class="ans" id="answer-'+it.id+'" role="region" aria-labelledby="question-'+it.id+'" aria-hidden="'+(!open)+'"'+(open?'':' inert')+'>'
     +'<div class="ans-in"><div class="ans-body">'+sum+a+extra
-    +'<div class="meta-row"><span class="src">'+esc(displaySource(it.src))+'</span>'+ordChips(it)+'</div>'
+    +'<div class="meta-row"><span class="src">'+esc(displaySource(it.src))+'</span>'+ordChips(it)
+    +'<button type="button" class="copy" data-copy="'+it.id+'" aria-label="העתקת קישור ישיר לשאלה '+it.id+'">🔗 העתקת קישור</button></div>'
     +'</div></div></div></article>';
 }
 
@@ -993,6 +998,18 @@ function render(animate){
     if(open)OPEN.add(id);else OPEN.delete(id);
     c.classList.toggle('open',open); b.setAttribute('aria-expanded',open);
     const ans=c.querySelector('.ans'); ans.setAttribute('aria-hidden',!open); ans.toggleAttribute('inert',!open);
+    // keep the address bar shareable: reflect the open question, clear on close
+    if(open) history.replaceState(null,'','#q-'+id);
+    else if(location.hash==='#q-'+id) history.replaceState(null,'',location.pathname+location.search);
+  });
+  res.querySelectorAll('.copy').forEach(btn=>btn.onclick=()=>{
+    const id=btn.dataset.copy;
+    const url=location.origin+location.pathname+location.search+'#q-'+id;
+    const done=()=>{const t=btn.textContent;btn.textContent='הועתק ✓';btn.classList.add('ok');
+      setTimeout(()=>{btn.textContent=t;btn.classList.remove('ok');},1600);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done,()=>{prompt('העתיקו את הקישור:',url);});
+    }else{prompt('העתיקו את הקישור:',url);}
   });
   wireCalc(res);
 }
