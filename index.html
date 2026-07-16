@@ -31,6 +31,8 @@
     line-height:1.5;letter-spacing:-.011em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
   a{color:var(--link);text-decoration:none;}
   a:hover{text-decoration:underline;}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px;}
+  .searchbox input:focus-visible{outline:none;}
   .wrap{max-width:780px;margin:0 auto;padding:0 22px;}
 
   /* hero */
@@ -301,6 +303,11 @@ const SYNN = SYN.map(g=>g.map(norm));
 
 /* ---------- sourced enrichments (appended to answers; additive, never overwriting) ---------- */
 const ENRICH = {
+ 2:'<p class="note">לתשומת לב: מקורות ציבוריים (כל־זכות) נוקבים בתקרה מרבית נמוכה יותר — סדר גודל של כ־<strong>5,850 ₪</strong>. התקרות מתעדכנות לפי המדד; המספרים כאן הם לפי מחשבון הקבוצה (אפריל 2026), והקובע העדכני הוא משרד הת״ש.</p>',
+ 8:'<p class="note">לפי כל־זכות, תקרת ההשתתפות בשכר דירה נמוכה יותר — סדר גודל של כ־<strong>795 ₪</strong> לחודש. הסכום מתעדכן לפי המדד; לאימות הסכום המדויק פנו למשרד הת״ש. (מקור: כל־זכות)</p>',
+ 11:'<p class="note">לפי כל־זכות, ההשתתפות באחזקת דירה עומדת על סדר גודל של כ־<strong>170 ₪</strong> (50%). הסכומים מתעדכנים לפי המדד. (מקור: כל־זכות)</p>',
+ 17:'<p class="note">כדאי לאמת מול הפקודה: בחלק מהמקורות חופשת הנישואין נזקפת מסל החופשה הרגיל, יום החתונה נספר במניין, וניתן להתחיל אותה כמה ימים לפני. ייתכן שפקודת החופשות ממוספרת כיום כ־<strong>פ״מ 04.101</strong>. (מקור: כל־זכות / את״צ)</p>',
+ 22:'<p class="note">לתשומת לב: בחלק מהמקורות, בשירות הסדיר יום הסידורים ניתן אחת לחודשיים (ולא מדי חודש). ודאו מול היחידה/הת״ש. (מקור: כל־זכות)</p>',
  13:'<p class="note">בפועל מדובר בכ־<strong>1,260 ₪</strong> (100% משכר טוראי, מתעדכן לפי המדד). לפי מקורות ציבוריים (כל־זכות).</p>',
  14:'<p class="note">הסכום כ־<strong>1,260 ₪</strong> לכל לידה (100% משכר טוראי). חשוב: זהו מענק של צה״ל, <strong>בנפרד</strong> ממענק הלידה של המוסד לביטוח לאומי המשולם להורה. (כל־זכות / ביטוח לאומי)</p>',
  23:'<p class="note">להת״ש 03 נלווית לרוב גם <strong>הצבה עד כ־100 ק״מ</strong> מהבית, ככל שהדבר מתאפשר מבצעית. (מקור: הנחיות את״צ / כל־זכות)</p>',
@@ -321,7 +328,12 @@ const CHART = {
    {label:"8,001–10,000", value:66, disp:"66%"},
    {label:"10,001–12,494", value:33, disp:"33%"},
    {label:"מעל 12,494", value:0, disp:"0%"}
- ], max:100}
+ ], max:100},
+ 20:{cap:"ימי חופשה — טיפולי פוריות וליווי", rows:[
+   {label:"חיילת", value:16, disp:"16 ימים"},
+   {label:"חייל", value:12, disp:"12 ימים"},
+   {label:"ליווי בן/בת הזוג", value:5, disp:"5 ימים"}
+ ], max:16}
 };
 
 /* merge the extra layers into the data without touching the source JSON */
@@ -359,9 +371,9 @@ function highlight(htmlStr, t){
 
 function buildChips(){
   const el=document.getElementById('chips');
-  let h='<span class="chip'+(activeCat==="all"?" active":"")+'" data-c="all">הכול</span>';
+  let h='<button type="button" class="chip'+(activeCat==="all"?" active":"")+'" data-c="all">הכול</button>';
   DB.categories.forEach(c=>{
-    h+='<span class="chip'+(activeCat===c.id?" active":"")+'" data-c="'+c.id+'">'+LET[c.id]+'. '+c.name+'</span>';
+    h+='<button type="button" class="chip'+(activeCat===c.id?" active":"")+'" data-c="'+c.id+'">'+LET[c.id]+'. '+c.name+'</button>';
   });
   el.innerHTML=h;
   el.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{activeCat=ch.dataset.c;buildChips();render(false);});
