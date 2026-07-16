@@ -167,7 +167,7 @@
     background:var(--panel);color:var(--text);font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;}
   .calc-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,102,204,.15);}
   .calc-out{display:flex;align-items:baseline;gap:11px;margin-top:12px;}
-  .calc-pct{font-size:30px;font-weight:600;letter-spacing:-.02em;color:var(--blue);min-width:62px;}
+  .calc-pct{font-size:27px;font-weight:600;letter-spacing:-.02em;color:var(--blue);white-space:nowrap;}
   .calc-note{font-size:14px;color:var(--text2);}
   .calc-fine{font-size:11.5px;color:var(--text3);margin-top:9px;line-height:1.4;}
 
@@ -327,13 +327,13 @@ const CHART = {
    {label:"חיילת / שירות לאומי / סטודנטית 30+", value:5146, disp:"5,146 ₪"},
    {label:"סטודנטית 16–29 שע׳", value:3431, disp:"3,431 ₪"}
  ], max:6861},
- 3:{cap:"אחוז זכאות לפי הכנסה ברוטו (דוגמת ״אם לילד״)", unit:"%", rows:[
-   {label:"עד 6,858 ₪", value:100, disp:"100%"},
-   {label:"6,858–8,000", value:88, disp:"88%"},
-   {label:"8,001–10,000", value:66, disp:"66%"},
-   {label:"10,001–12,494", value:33, disp:"33%"},
-   {label:"מעל 12,494", value:0, disp:"0%"}
- ], max:100},
+ 3:{cap:"כמה מקבלים בחודש, לפי הכנסה ברוטו (דוגמת ״אם לילד״, בקירוב)", rows:[
+   {label:"עד 6,858 ₪", value:6861, disp:"6,861 ₪"},
+   {label:"6,858–8,000", value:6038, disp:"כ־6,040 ₪"},
+   {label:"8,001–10,000", value:4528, disp:"כ־4,530 ₪"},
+   {label:"10,001–12,494", value:2264, disp:"כ־2,260 ₪"},
+   {label:"מעל 12,494", value:0, disp:"0 ₪"}
+ ], max:6861},
  20:{cap:"ימי חופשה — טיפולי פוריות וליווי", rows:[
    {label:"חיילת", value:16, disp:"16 ימים"},
    {label:"חייל", value:12, disp:"12 ימים"},
@@ -367,7 +367,7 @@ const REWRITE = {
 
 /* ---------- worked real-life examples ---------- */
 const CASES = {
- 3:'<p class="case">💡 <strong>דוגמה מהחיים:</strong> בת זוג שהיא אם לילד עם 6,000 ₪ ברוטו — זכאות מלאה (100%). עם 9,000 ₪ — כ־66% מהתקרה. עם 13,000 ₪ — ככל הנראה ללא זכאות. נסו את המחשבון למטה עם המספר שלכם.</p>',
+ 3:'<p class="case">💡 <strong>דוגמה מהחיים:</strong> בת זוג שהיא אם לילד עם 6,000 ₪ ברוטו — תשמ"ש מלא, 6,861 ₪ בחודש. עם 9,000 ₪ — כ־4,530 ₪. עם 13,000 ₪ — ככל הנראה 0 ₪. נסו את המחשבון למטה עם המספר שלכם.</p>',
  9:'<p class="case">💡 <strong>דוגמה:</strong> חייל נשוי עם תשמ"ש מלא שמשרת ברמ"פ א׳ — יקבל בנוסף לתשמ"ש גם כמחצית מתקרת שכר הדירה, גם אם אין לו ילדים.</p>',
  10:'<p class="case">💡 <strong>דוגמה:</strong> הוא לוחם (רמ"פ גבוהה) והיא בתפקיד עורפי, שניהם בשירות חובה — הוא יקבל את התשמ"ש, והיא שכר דירה בתקרה מלאה. המשפחה נהנית משתי ההטבות במקביל.</p>',
  24:'<p class="case">💡 <strong>דוגמה:</strong> חייל בודד שהתחתן בתחילת ינואר — ממשיך בהטבות בודד עד תחילת אפריל (3 חודשי התארגנות). אם יגיש בקשת תשמ"ש מיד אחרי החתונה, המעבר יהיה רציף — והתשמ"ש לא ייפול משכר הבודד.</p>',
@@ -497,21 +497,24 @@ function calcPct(v){
   if(!(v>=0)) return null;
   if(v<=6858) return 100; if(v<=8000) return 88; if(v<=10000) return 66; if(v<=12494) return 33; return 0;
 }
+const CEIL=6861; // full ceiling for the "אם לילד" example
+function calcAmt(p){ return p===100?CEIL:Math.round(p/100*CEIL/10)*10; }
 function calcWidget(){
-  return '<div class="calc"><div class="calc-h">בדקו לבד — הכנסת בן/בת הזוג (ברוטו, ₪):</div>'
+  return '<div class="calc"><div class="calc-h">בדקו לבד — כמה בחודש? הזינו את הכנסת בן/בת הזוג (ברוטו, ₪):</div>'
     +'<input class="calc-in" type="number" inputmode="numeric" min="0" step="100" placeholder="למשל 9,000" aria-label="הכנסה חודשית ברוטו">'
     +'<div class="calc-out"><span class="calc-pct">—</span><span class="calc-note">הזינו סכום לחישוב מקורב</span></div>'
-    +'<div class="calc-fine">הערכה להמחשה בלבד לפי מדרגות ״אם לילד״. החישוב המחייב — במחשבון הרשמי של הקבוצה.</div></div>';
+    +'<div class="calc-fine">הערכה להמחשה בלבד לפי דוגמת ״אם לילד״ (תקרה 6,861 ₪). החישוב המחייב — במחשבון הרשמי של הקבוצה.</div></div>';
 }
 function wireCalc(scope){
   scope.querySelectorAll('.calc').forEach(box=>{
-    const inp=box.querySelector('.calc-in'), pct=box.querySelector('.calc-pct'), note=box.querySelector('.calc-note');
+    const inp=box.querySelector('.calc-in'), out=box.querySelector('.calc-pct'), note=box.querySelector('.calc-note');
     inp.addEventListener('input',()=>{
       const v=parseFloat((inp.value||'').replace(/[^\d.]/g,''));
       const p=calcPct(v);
-      if(p===null){pct.textContent='—';note.textContent='הזינו סכום לחישוב מקורב';return;}
-      pct.textContent=p+'%';
-      note.textContent = p===100?'זכאות מלאה משוערת':(p===0?'קרוב לוודאי לא זכאי/ת':'זכאות חלקית משוערת');
+      if(p===null){out.textContent='—';note.textContent='הזינו סכום לחישוב מקורב';return;}
+      const amt=calcAmt(p);
+      out.textContent=(p===100?amt.toLocaleString('he-IL'):(p===0?'0':'כ־'+amt.toLocaleString('he-IL')))+' ₪';
+      note.textContent = p===100?'בחודש · זכאות מלאה (100%)':(p===0?'ככל הנראה ללא זכאות':'בחודש · כ־'+p+'% מהתקרה');
     });
   });
 }
