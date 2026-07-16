@@ -6,6 +6,14 @@
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="מדריך שאלות ותשובות לזכויות החייל/ת הנשוי/אה בצה״ל — תשלומי משפחה (תשמ״ש), שכר דירה, מענקים, חופשות מיוחדות והטבות, עם קישור לפקודות הרשמיות.">
+<link rel="canonical" href="https://michael-istanbuli.github.io/IDF-married-faq/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%230071e3'/%3E%3Cpath d='m18 33 9 9 20-22' fill='none' stroke='white' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="זכויות נשואים בצה״ל — מדריך מעשי">
+<meta property="og:description" content="40 תשובות מסודרות על תשמ״ש, דיור, מענקים, חופשות, הורות וזכויות אזרחיות — עם מקורות וקישורים לפקודות.">
+<meta property="og:url" content="https://michael-istanbuli.github.io/IDF-married-faq/">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f7">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
 <title>שאלות נפוצות – זכויות החייל/ת הנשוי/אה בצה&quot;ל</title>
@@ -122,7 +130,7 @@
   .panel .grid{display:grid;grid-template-columns:1fr;gap:12px;}
   .panel .row{font-size:15px;color:var(--text2);} .panel .row b{color:var(--text);font-weight:600;}
   .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;align-items:center;}
-  .cta a{background:var(--blue);color:#fff;border-radius:980px;padding:11px 22px;font-weight:500;font-size:15px;
+  .cta a{background:#0066cc;color:#fff;border-radius:980px;padding:11px 22px;font-weight:500;font-size:15px;
     letter-spacing:-.01em;transition:transform .4s var(--ease),opacity .3s;}
   .cta a:hover{text-decoration:none;opacity:.9;transform:scale(1.02);}
   .cta a.ghost{background:transparent;color:var(--link);padding:11px 4px;}
@@ -185,62 +193,375 @@
     *{transition:none!important;animation:none!important;}
     .card,.panel{opacity:1!important;transform:none!important;}
   }
+
+  /* v3 — editorial support experience */
+  :root{
+    color-scheme:light dark;
+    --bg:#f5f5f7;--panel:#fff;--text:#1d1d1f;--text2:#515154;--text3:#6e6e73;
+    --hair:rgba(0,0,0,.1);--blue:#0071e3;--link:#0066cc;--chip:#e8e8ed;--chip-hover:#dedee3;
+    --soft:#f5f5f7;--mark:#d9ecff;--bar:rgba(250,250,252,.82);
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 34px rgba(0,0,0,.06);
+    --max:1120px;--reading:800px;--radius:28px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#000;--panel:#1c1c1e;--text:#f5f5f7;--text2:#d2d2d7;--text3:#a1a1a6;
+      --hair:rgba(255,255,255,.13);--blue:#2997ff;--link:#2997ff;--chip:#2c2c2e;--chip-hover:#3a3a3c;
+      --soft:#2c2c2e;--mark:#173b61;--bar:rgba(20,20,22,.84);
+      --shadow:none;
+    }
+  }
+  html{scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{letter-spacing:0;overflow-x:hidden;}
+  button,input{font:inherit;}
+  .wrap,.content-shell{max-width:var(--reading);margin:0 auto;padding-inline:22px;}
+  .wide-shell,.nav-shell,.hero-shell{max-width:var(--max);margin:0 auto;padding-inline:28px;}
+  .skip-link{position:fixed;inset-block-start:10px;inset-inline-start:10px;z-index:100;
+    transform:translateY(-160%);background:var(--text);color:var(--panel);padding:10px 16px;border-radius:12px;font-weight:600;}
+  .skip-link:focus{transform:none;}
+
+  .site-nav{height:48px;border-bottom:1px solid var(--hair);background:var(--bar);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);}
+  .nav-shell{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .wordmark{display:inline-flex;align-items:center;gap:9px;min-height:36px;color:var(--text);font-size:15px;font-weight:650;letter-spacing:-.01em;}
+  .wordmark:hover{text-decoration:none;}
+  .wordmark-mark{width:18px;height:18px;border-radius:6px;background:linear-gradient(145deg,#49a7ff,#0066cc);position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);}
+  .wordmark-mark::after{content:"";position:absolute;width:6px;height:3px;border-inline-start:1.7px solid #fff;border-bottom:1.7px solid #fff;transform:rotate(-45deg);inset:6px 5px;}
+  .nav-links{display:flex;align-items:center;gap:25px;font-size:12px;}
+  .nav-links a{display:inline-flex;align-items:center;min-height:36px;color:var(--text2);}
+  .nav-links a:hover{color:var(--text);text-decoration:none;}
+
+  header.hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(74px,10vw,128px) 0 clamp(66px,9vw,110px);text-align:center;
+    background:linear-gradient(180deg,var(--panel) 0%,var(--bg) 100%);}
+  header.hero::before{content:"";position:absolute;z-index:-1;width:min(720px,88vw);aspect-ratio:1;inset:-52% 50% auto auto;transform:translateX(50%);
+    border-radius:50%;background:radial-gradient(circle,rgba(0,113,227,.13),transparent 67%);filter:blur(10px);pointer-events:none;}
+  header.hero .eyebrow,.section-kicker{margin:0 0 17px;color:var(--blue);font-size:15px;font-weight:650;letter-spacing:.005em;}
+  .section-kicker{color:var(--link);}
+  header.hero h1{margin:0;font-size:clamp(52px,8.1vw,94px);line-height:.98;font-weight:720;letter-spacing:-.045em;}
+  header.hero h1 span{color:var(--blue);}
+  header.hero .lede{max-width:720px;margin:27px auto 0;color:var(--text2);font-size:clamp(20px,2.2vw,25px);line-height:1.45;letter-spacing:-.012em;}
+  .hero-actions{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:32px;}
+  .primary-action,.secondary-action,.journey-link{min-height:48px;border-radius:980px;padding:11px 23px;font-weight:600;font-size:16px;cursor:pointer;transition:transform .2s var(--ease),background .2s,opacity .2s;}
+  .primary-action{border:0;background:#0071e3;color:#fff;}
+  .secondary-action{display:inline-flex;align-items:center;border:1px solid var(--hair);background:var(--panel);color:var(--text);}
+  .primary-action:hover,.secondary-action:hover,.journey-link:hover{transform:scale(1.02);text-decoration:none;}
+  .primary-action:active,.secondary-action:active,.journey-link:active{transform:scale(.97);}
+  .trust-line{display:inline-flex;align-items:center;gap:9px;margin-top:34px;color:var(--text2);font-size:13px;font-weight:550;}
+  .trust-dot{width:7px;height:7px;border-radius:50%;background:#34c759;box-shadow:0 0 0 4px rgba(52,199,89,.12);}
+  .verified{margin:9px 0 0;color:var(--text3);font-size:12px;}
+  header.hero>.hero-shell>*{animation:rise .72s var(--ease) both;}
+  header.hero h1{animation-delay:.04s;} header.hero .lede{animation-delay:.1s;} .hero-actions{animation-delay:.16s;} .trust-line,.verified{animation-delay:.22s;}
+
+  main{padding:0 0 84px;}
+  .discover{padding:86px 0 48px;}
+  .section-heading{max-width:720px;margin-bottom:34px;}
+  .section-heading h2,.faq-intro h2,.support-heading h2{margin:0;font-size:clamp(36px,5.3vw,60px);line-height:1.03;font-weight:700;letter-spacing:-.038em;}
+  .section-heading p:not(.section-kicker),.faq-intro>p:last-child,.support-heading>p:last-child{max-width:620px;margin:17px 0 0;color:var(--text2);font-size:18px;line-height:1.5;}
+  .route-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+  .route-card{min-height:228px;border:1px solid var(--hair);border-radius:26px;background:var(--panel);color:var(--text);text-align:start;padding:24px;cursor:pointer;position:relative;
+    display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 1px 2px rgba(0,0,0,.025);transition:transform .35s var(--ease),border-color .2s,box-shadow .35s var(--ease);}
+  .route-card:hover{transform:translateY(-4px);border-color:rgba(0,113,227,.28);box-shadow:var(--shadow);}
+  .route-kicker{font-size:13px;font-weight:650;color:var(--blue);margin-bottom:auto;}
+  .route-card strong{font-size:21px;line-height:1.22;letter-spacing:-.022em;margin-top:28px;}
+  .route-card .route-copy{margin-top:8px;color:var(--text2);font-size:14px;line-height:1.45;}
+  .route-arrow{position:absolute;inset-block-start:21px;inset-inline-end:21px;width:28px;height:28px;border-radius:50%;background:var(--soft);}
+  .route-arrow::after{content:"";position:absolute;width:6px;height:6px;border-top:1.5px solid var(--text);border-inline-end:1.5px solid var(--text);transform:rotate(-45deg);inset:10px 9px;}
+
+  .journey-section{padding:36px 0 34px;}
+  .journey-card{overflow:hidden;border-radius:34px;background:#1d1d1f;color:#f5f5f7;padding:clamp(34px,5vw,58px);box-shadow:0 28px 80px rgba(0,0,0,.13);}
+  .journey-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.55fr);gap:48px;align-items:end;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.16);}
+  .journey-intro .section-kicker{color:#76baff;}
+  .journey-intro h2{margin:0;font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-.038em;}
+  .journey-intro p:last-child{margin:0;color:#a1a1a6;font-size:17px;line-height:1.55;}
+  .journey-steps{list-style:none;margin:0;padding:36px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:steps;}
+  .journey-steps li{position:relative;padding-inline-start:0;}
+  .step-num{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#0066cc;color:#fff;font-size:13px;font-weight:700;margin-bottom:18px;}
+  .journey-steps strong{display:block;font-size:17px;line-height:1.3;}
+  .journey-steps p{margin:8px 0 0;color:#a1a1a6;font-size:14px;line-height:1.5;}
+  .journey-foot{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:35px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16);}
+  .journey-link{border:0;background:#f5f5f7;color:#1d1d1f;}
+  .journey-foot span{color:#a1a1a6;font-size:13px;}
+
+  .proof-strip{display:grid;grid-template-columns:repeat(3,1fr);padding:36px 28px 76px;}
+  .proof-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 24px;border-inline-end:1px solid var(--hair);}
+  .proof-item:last-child{border-inline-end:0;}
+  .proof-item strong{font-size:clamp(29px,4vw,42px);line-height:1;font-weight:680;letter-spacing:-.025em;font-variant-numeric:tabular-nums;}
+  .proof-item span{margin-top:8px;color:var(--text3);font-size:13px;}
+
+  .search-sticky{position:sticky;top:0;z-index:40;padding:10px 0;background:var(--bar);border-block:1px solid var(--hair);
+    -webkit-backdrop-filter:saturate(180%) blur(22px);backdrop-filter:saturate(180%) blur(22px);}
+  .search-sticky .content-shell{max-width:860px;}
+  .searchbox input{height:52px;padding:0 48px 0 18px;border-radius:16px;background:var(--panel);font-size:18px;box-shadow:0 1px 2px rgba(0,0,0,.03);}
+  .searchbox input:focus{box-shadow:0 0 0 3px var(--blue);}
+  .searchbox input:focus-visible{outline:2px solid var(--panel);outline-offset:-4px;}
+  .searchbox .ic{right:17px;width:19px;height:19px;}
+  .filterbar{background:var(--bg);padding:20px 0 0;}
+  .filterbar .content-shell{max-width:860px;}
+  .filter-label{display:flex;justify-content:space-between;align-items:center;color:var(--text3);font-size:12px;margin:0 2px 9px;}
+  .chips{margin:0;position:relative;}
+  .chip{padding:8px 17px;color:var(--text2);}
+  .chip.active{background:var(--text);color:var(--panel);}
+  .chip:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
+
+  .faq-shell{padding:76px 0 20px;}
+  .faq-intro{max-width:var(--reading);margin:0 auto 34px;padding-inline:22px;}
+  .count{max-width:var(--reading);margin:0 auto 12px;color:var(--text3);font-size:13px;padding:0 2px;}
+  #quick{max-width:var(--reading);margin:0 auto 18px;}
+  .qa{border-radius:22px;padding:20px 22px 21px;box-shadow:none;}
+  .qa::before{display:none;}
+  .qa-h{margin-bottom:10px;}
+  .qa-badge{background:transparent;color:var(--blue);padding:0;border-radius:0;font-size:12px;}
+  .qa-link{background:transparent;padding:7px 0;min-height:44px;}
+  .qa-link:hover{background:transparent;text-decoration:underline;}
+  #results{max-width:var(--reading);margin:0 auto;}
+  .faq-group{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin:0 0 22px;box-shadow:0 1px 2px rgba(0,0,0,.025);}
+  .faq-group-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:26px 28px 22px;background:linear-gradient(180deg,var(--panel),color-mix(in srgb,var(--panel) 92%,var(--soft)));}
+  .faq-group-head h3{margin:0;font-size:24px;line-height:1.2;letter-spacing:-.024em;}
+  .faq-group-head p{margin:7px 0 0;color:var(--text3);font-size:13px;}
+  .group-count{color:var(--text3);font-size:12px;white-space:nowrap;}
+  .faq-list{border-top:1px solid var(--hair);}
+  .card{margin:0;border:0;border-radius:0;box-shadow:none;opacity:1;transform:none;border-bottom:1px solid var(--hair);scroll-margin-top:92px;}
+  .card:last-child{border-bottom:0;}
+  @media(hover:hover){.card:hover{box-shadow:none;background:color-mix(in srgb,var(--panel) 96%,var(--soft));}}
+  .qtitle{margin:0;}
+  .qtitle>button{width:100%;text-align:right;background:none;border:0;cursor:pointer;color:inherit;padding:23px 28px;display:flex;gap:16px;align-items:center;font-family:inherit;}
+  .qtitle>button:focus-visible{outline:0;box-shadow:inset 0 0 0 3px var(--blue);border-radius:0;}
+  .card .qn{order:3;background:none;color:var(--text3);font-size:12px;font-weight:550;border-radius:0;padding:0;min-width:28px;margin:0;font-variant-numeric:tabular-nums;}
+  .qhead{gap:5px;}
+  .card .cattag{font-size:12px;color:var(--text3);font-weight:550;}
+  .card .qtext{font-size:19px;line-height:1.35;letter-spacing:-.014em;}
+  .card .arrow{order:2;width:9px;height:9px;margin:0 0 0 4px;}
+  .ans-body{padding:4px 72px 30px 28px;border-top:0;max-width:760px;}
+  .ans p,.ans li{font-size:16px;line-height:1.58;}
+  .sum{font-size:16px;line-height:1.55;border-radius:14px;padding:14px 16px;margin-bottom:18px;}
+  .ans table,.amt,.calc-pct,.chart-val{font-variant-numeric:tabular-nums;}
+  .meta-row{padding-top:6px;border-top:1px solid var(--hair);margin-top:20px;}
+  .src,.ord{background:transparent;border-radius:0;padding:6px 0;margin-inline-end:12px;line-height:1.45;}
+  .ord:hover{background:transparent;text-decoration:underline;}
+  .case{border-inline-start:0;border-radius:14px;padding:14px 16px;}
+  .case strong:first-child{color:var(--link);}
+  .empty{background:var(--panel);border:1px solid var(--hair);border-radius:24px;}
+
+  .support-section{padding:92px 0 0;}
+  .support-heading{max-width:720px;margin-bottom:34px;}
+  .support-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .panel{margin:0;padding:28px;border-radius:26px;opacity:1;transform:none;box-shadow:none;}
+  .panel h3{font-size:24px;margin-bottom:16px;}
+  .panel .row{line-height:1.55;}
+  .orders-panel{grid-column:1/-1;}
+  .orders-panel .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 26px;}
+  .calculator-panel{background:linear-gradient(145deg,#0071e3,#004ea8);color:#fff;border:0;}
+  .calculator-panel .row{color:#fff;}
+  .calculator-panel .cta a{background:#fff;color:#0066cc;}
+  .calculator-panel .cta a.ghost{color:#fff;}
+
+  footer{max-width:var(--max);border-top:1px solid var(--hair);padding:32px 28px calc(42px + env(safe-area-inset-bottom));font-size:12px;color:var(--text3);}
+  .footer-row{display:flex;justify-content:space-between;gap:28px;text-align:start;}
+  .footer-row p{margin:0;max-width:690px;}
+  .footer-meta{white-space:nowrap;}
+
+  @supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+    .site-nav,.search-sticky{background:var(--panel);}
+  }
+  @media (prefers-reduced-transparency:reduce){.site-nav,.search-sticky{background:var(--panel);-webkit-backdrop-filter:none;backdrop-filter:none;}}
+  @media(max-width:900px){
+    .route-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .journey-intro{grid-template-columns:1fr;gap:18px;}
+    .journey-steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media(max-width:640px){
+    .wide-shell,.nav-shell,.hero-shell{padding-inline:max(19px,env(safe-area-inset-left));}
+    .nav-links{gap:16px;}.nav-links a:first-child{display:none;}
+    header.hero{padding:58px 0 62px;}
+    header.hero h1{font-size:clamp(44px,13vw,61px);letter-spacing:-.04em;}
+    header.hero .lede{font-size:19px;}
+    .hero-actions{flex-direction:column;align-items:stretch;max-width:300px;margin-inline:auto;}
+    .primary-action,.secondary-action{justify-content:center;width:100%;}
+    .trust-line{align-items:flex-start;text-align:start;line-height:1.45;}
+    .discover{padding:60px 0 30px;}
+    .route-card{min-height:200px;padding:21px;}
+    .route-card strong{font-size:19px;}
+    .journey-card{border-radius:28px;padding:31px 24px;}
+    .journey-steps{grid-template-columns:1fr;gap:24px;}
+    .journey-foot{align-items:flex-start;flex-direction:column;}
+    .proof-strip{padding:28px 12px 56px;}
+    .proof-item{padding-inline:10px;}.proof-item strong{font-size:29px;}.proof-item span{font-size:11.5px;}
+    .search-sticky{padding:8px 0;}
+    .search-sticky .content-shell,.filterbar .content-shell{padding-inline:max(18px,env(safe-area-inset-left));}
+    .faq-shell{padding-top:58px;}
+    .faq-group{border-radius:22px;margin-bottom:16px;}
+    .faq-group-head{padding:22px 20px 18px;}
+    .faq-group-head h3{font-size:22px;}
+    .qtitle>button{padding:20px;gap:12px;}
+    .card .qn{display:none;}
+    .card .qtext{font-size:17px;}
+    .ans-body{padding:2px 20px 25px;}
+    .chart-row{display:grid;grid-template-columns:1fr auto;gap:5px 10px;}
+    .chart-lab{flex:none;grid-column:1;}.chart-val{grid-column:2;}.chart-track{grid-column:1/-1;width:100%;}
+    .calc-out{flex-wrap:wrap;}.cta a:not(.ghost){width:100%;text-align:center;}
+    .support-grid{grid-template-columns:1fr;}.orders-panel{grid-column:auto;}.orders-panel .grid{grid-template-columns:1fr;}
+    .footer-row{flex-direction:column;}.footer-meta{white-space:normal;}
+  }
+  @media(max-width:420px){
+    .nav-links a{display:none;}
+    .route-grid{grid-template-columns:1fr;}
+    .route-card{min-height:176px;}
+    .proof-item strong{font-size:24px;}.proof-item{padding-inline:6px;}
+    .faq-intro,.content-shell{padding-inline:18px;}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}header.hero>.hero-shell>*{animation:none;}.route-card:hover{transform:none;}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-  <p class="eyebrow">קבוצת &quot;זכויות נשואים בצה&quot;ל&quot; ⚖️💍</p>
-  <h1>זכויות החייל/ת הנשוי/אה בצה״ל</h1>
-  <p class="lede">מדריך שאלות ותשובות · חיפוש חכם · קישור לפקודות הרשמיות</p>
-  <p class="ver">גרסה 2.2 · עדכון יולי 2026 · חיפוש חכם, תרשימים ומחשבון</p>
-</div></header>
+<a class="skip-link" href="#guide">דילוג לתוכן</a>
 
-<div class="toolbar">
-  <div class="wrap">
-    <div class="searchbox">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-      <input id="q" type="search" aria-label="חיפוש במדריך" placeholder="חיפוש חופשי… (למשל: חופשת לידה, ארנונה, תווי קנייה, שכר דירה)" autocomplete="off">
+<nav class="site-nav" aria-label="ניווט ראשי">
+  <div class="nav-shell">
+    <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true"></span>זכויות נשואים</a>
+    <div class="nav-links">
+      <a href="#start">מתחילים</a>
+      <a href="#questions">כל השאלות</a>
+      <a href="#sources">מקורות וסיוע</a>
     </div>
-    <div class="chips" id="chips"></div>
   </div>
-</div>
+</nav>
 
-<div class="wrap">
-  <div id="quick" hidden></div>
-  <div class="count" id="count" aria-live="polite"></div>
+<header class="hero" id="top">
+  <div class="hero-shell">
+    <p class="eyebrow">מדריך זכויות · שירות חובה</p>
+    <h1>הזכויות שלכם.<br><span>ברורות, במקום אחד.</span></h1>
+    <p class="lede">מידע מעשי לחיילות ולחיילים נשואים — מתשמ״ש ושכר דירה ועד חופשות, לידה ושחרור.</p>
+    <div class="hero-actions">
+      <button class="primary-action" type="button" data-focus-search>חיפוש במדריך</button>
+      <a class="secondary-action" href="#start">מתחילים כאן&nbsp; ↓</a>
+    </div>
+    <div class="trust-line" role="note"><span class="trust-dot" aria-hidden="true"></span>מדריך קהילתי · אינו אתר רשמי של צה״ל · מבוסס על מקורות רשמיים ומידע מהקהילה</div>
+    <p class="verified">נבדק מול פקודות ציבוריות וקובצי ההטבות של הקבוצה · עודכן ב־16 ביולי 2026</p>
+  </div>
+</header>
 
-  <main>
-    <div id="results"></div>
+<main id="guide">
+  <section class="discover wide-shell" aria-labelledby="popular-title">
+    <div class="section-heading">
+      <p class="section-kicker">נושאים פופולריים</p>
+      <h2 id="popular-title">לא צריך לדעת מה לחפש.</h2>
+      <p>בחרו את מה שמעסיק אתכם עכשיו, וניקח אתכם ישר לתשובה המלאה.</p>
+    </div>
+    <div class="route-grid">
+      <button class="route-card" type="button" data-go="3">
+        <span class="route-kicker">תשמ״ש</span><span class="route-arrow" aria-hidden="true"></span>
+        <strong>כמה עשוי להגיע לכם?</strong><span class="route-copy">מבחן הכנסה, תקרות וחישוב מקורב.</span>
+      </button>
+      <button class="route-card" type="button" data-go="8">
+        <span class="route-kicker">דיור</span><span class="route-arrow" aria-hidden="true"></span>
+        <strong>סיוע בשכר דירה</strong><span class="route-copy">שכירות, משכנתא, חוזה ואחזקת דירה.</span>
+      </button>
+      <button class="route-card" type="button" data-go="17">
+        <span class="route-kicker">חופשות</span><span class="route-arrow" aria-hidden="true"></span>
+        <strong>נישואין ומשפחה</strong><span class="route-copy">כמה ימים, מתי אפשר לנצל ומה מצרפים.</span>
+      </button>
+      <button class="route-card" type="button" data-go="19">
+        <span class="route-kicker">הורות</span><span class="route-arrow" aria-hidden="true"></span>
+        <strong>היריון, לידה וילדים</strong><span class="route-copy">חופשות, מענקים, גנים והמעבר בין ההטבות.</span>
+      </button>
+    </div>
+  </section>
 
-    <div class="panel" id="calcPanel">
-      <h3>מחשבון התשמ״ש של הקבוצה</h3>
-      <div class="row">לחישוב אישי מדויק של הזכאות לפי הכנסת בן/בת הזוג:</div>
-      <div class="cta">
-        <a href="https://app---744d4b04.base44.app" target="_blank" rel="noopener noreferrer">פתיחת המחשבון ↗</a>
-        <a class="ghost" href="https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/" target="_blank" rel="noopener noreferrer">אתר הפקודות הרשמי ↗</a>
+  <section class="journey-section wide-shell" id="start" aria-labelledby="start-title">
+    <div class="journey-card">
+      <div class="journey-intro">
+        <div><p class="section-kicker">אחרי החתונה</p><h2 id="start-title">ארבעה צעדים.<br>בלי ללכת לאיבוד.</h2></div>
+        <p>הזכויות לא תמיד נכנסות יחד. עדכנו סטטוס, הגישו כל בקשה בנפרד ושמרו תיעוד — כך קל יותר לתקן עיכוב או סכום שגוי.</p>
+      </div>
+      <ol class="journey-steps">
+        <li><span class="step-num">1</span><strong>מעדכנים סטטוס</strong><p>תעודת נישואין לשלישות ועדכון מלא ברשומות הצבא.</p></li>
+        <li><span class="step-num">2</span><strong>מכינים מסמכים</strong><p>הכנסות, חשבונות, חוזה שכירות וכל אסמכתה שביקש סגל הת״ש.</p></li>
+        <li><span class="step-num">3</span><strong>מגישים ועוקבים</strong><p>שמרו תאריך הגשה, עותק וקבלת מסמכים. תשובה לתשמ״ש: עד 60 יום, למעט חריגים.</p></li>
+        <li><span class="step-num">4</span><strong>בודקים ומתקנים</strong><p>עברו על התלוש והיתרות. טעות או שינוי נסיבות מאפשרים עיון מחדש והשגה מנומקת.</p></li>
+      </ol>
+      <div class="journey-foot"><button class="journey-link" type="button" data-go="7">למדריך ההגשה</button><span>המקור: פ״מ 35.0210 · ההחלטה והנימוקים אמורים להימסר לחייל</span></div>
+    </div>
+  </section>
+
+  <section class="proof-strip wide-shell" aria-label="עקרונות המדריך">
+    <div class="proof-item"><strong id="faqTotal">—</strong><span>תשובות מסודרות</span></div>
+    <div class="proof-item"><strong>6</strong><span>תחומי זכויות</span></div>
+    <div class="proof-item"><strong>0</strong><span>מעקב, עוגיות או איסוף מידע באתר הזה</span></div>
+  </section>
+
+  <div class="search-sticky">
+    <div class="content-shell">
+      <div class="searchbox" role="search">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+        <input id="q" type="search" aria-label="חיפוש במדריך" placeholder="מה תרצו לדעת?" autocomplete="off" spellcheck="false">
       </div>
     </div>
+  </div>
 
-    <div class="panel">
-      <h3>למי פונים?</h3>
-      <div class="grid" id="contacts"></div>
+  <div class="filterbar">
+    <div class="content-shell">
+      <div class="filter-label"><span>סינון לפי נושא</span><span>אפשר גם לכתוב בשפה חופשית</span></div>
+      <div class="chips" id="chips" role="group" aria-label="סינון שאלות לפי נושא"></div>
     </div>
+  </div>
 
-    <div class="panel">
-      <h3>הפקודות וההוראות המחייבות</h3>
-      <div class="grid" id="orders"></div>
+  <section class="faq-shell" id="questions" aria-labelledby="faq-title">
+    <div class="faq-intro">
+      <p class="section-kicker">המדריך המלא</p>
+      <h2 id="faq-title">כל מה שצריך לדעת.</h2>
+      <p>המידע מחולק לפי נושאים. בכל תשובה תמצאו סיכום קצר, פירוט ומקור — וכשיש ספק, גם אזהרה ברורה.</p>
     </div>
-  </main>
-</div>
+    <div class="content-shell">
+      <div id="quick" hidden></div>
+      <div class="count" id="count" aria-live="polite"></div>
+      <div id="results"></div>
+    </div>
+  </section>
+
+  <section class="support-section wide-shell" id="sources" aria-labelledby="support-title">
+    <div class="support-heading">
+      <p class="section-kicker">כלים ומקורות</p>
+      <h2 id="support-title">לא נשארים עם סימן שאלה.</h2>
+      <p>השתמשו במחשבון להערכה, פנו לגורם הנכון ובדקו תמיד את הנוסח המחייב.</p>
+    </div>
+    <div class="support-grid">
+      <div class="panel calculator-panel" id="calcPanel">
+        <h3>מחשבון התשמ״ש של הקבוצה</h3>
+        <div class="row">לחישוב אישי לפי הכנסת בן/בת הזוג. התוצאה להכוונה; משרד הת״ש קובע את הזכאות.</div>
+        <div class="cta"><a href="https://app---744d4b04.base44.app" target="_blank" rel="noopener noreferrer">פתיחת המחשבון ↗</a></div>
+      </div>
+      <div class="panel contacts-panel">
+        <h3>למי פונים?</h3>
+        <div class="grid" id="contacts"></div>
+      </div>
+      <div class="panel orders-panel">
+        <h3>הפקודות וההוראות המחייבות</h3>
+        <div class="grid" id="orders"></div>
+        <div class="cta"><a class="ghost" href="https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/" target="_blank" rel="noopener noreferrer">פתיחת מאגר הפקודות הרשמי ↗</a></div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  מסמך זה הוא ריכוז מידע לנוחות חברי הקבוצה בלבד ואינו מסמך רשמי. הסכומים והכללים משתנים לפי המדד.<br>
-  בכל ספק — משרד הת״ש / השלישות. המקור המחייב הוא הפקודות הרשמיות של צה״ל.
+  <div class="footer-row">
+    <p>מדריך קהילתי עצמאי לנוחות חברי קבוצת "זכויות נשואים בצה״ל". אינו מסמך רשמי ואינו מחליף החלטת זכאות. הסכומים והכללים עשויים להשתנות; במקרה של סתירה, הפקודות וההוראות הרשמיות גוברות.</p>
+    <div class="footer-meta">גרסה 3.0 · יולי 2026<br>במדריך עצמו: ללא מעקב או אחסון מידע</div>
+  </div>
 </footer>
 
 <script>
 const DB = {"meta": {"title": "שאלות נפוצות – זכויות החייל/ת הנשוי/אה בצה\"ל", "group": "קבוצת \"זכויות נשואים בצה\"ל\" ⚖️💍", "version": "2.0", "updated": "2026-07", "calculator": "https://app---744d4b04.base44.app", "disclaimer": "מסמך זה מרכז מידע לנוחות חברי הקבוצה בלבד ואינו מסמך רשמי. הוא מבוסס על הוראת אכ\"א \"מעטפת הפרט לחייל הנשוי/ידוע בציבור\" (הפרט 100, ספטמבר 2025), על איגרת ההטבות לחייל הנשוי, על מחשבון התשמ\"ש של הקבוצה (עדכני לאפריל 2026) ועל תשובות מומחי הקבוצה. הסכומים משתנים מעת לעת לפי מדד המחירים לצרכן. הקובע הסופי לזכאות הוא משרד הת\"ש, והמקור המחייב הוא הפקודות וההוראות הרשמיות של צה\"ל – בראשן פ\"מ 35.0210 (חוקת התשלומים למשפחות חיילים) ופ\"מ 35.0402 (חופשות לחיילים בשירות חובה)."}, "categories": [{"id": "A", "name": "תשלומי משפחה (תשמ\"ש)"}, {"id": "B", "name": "שכר דירה ואחזקת דירה"}, {"id": "C", "name": "מענקים והטבות כספיות"}, {"id": "D", "name": "חופשות מיוחדות"}, {"id": "E", "name": "מצבים מיוחדים"}, {"id": "F", "name": "הטבות אזרחיות ומיצוי זכויות"}], "orders": [{"num": "35.0210", "title": "חוקת התשלומים למשפחות חיילים בשירות חובה – נוהל הגשת הבקשות ואישורן", "collection": "פקודות מטכ\"ל, פרק תנאי שירות 35", "url": "https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%9E%D7%98%D7%9B-%D7%9C/%D7%AA%D7%A0%D7%90%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-35/%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99-%D7%A9%D7%9B%D7%A8-%D7%95%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%90%D7%95-%D7%A0%D7%99%D7%9B%D7%95%D7%99%D7%99%D7%9D-%D7%A6%D7%9E%D7%95%D7%93%D7%99%D7%9D-%D7%9C%D7%AA%D7%A9%D7%9C%D7%95%D7%9D-02/%D7%97%D7%95%D7%A7%D7%AA-%D7%94%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%9D-%D7%9C%D7%9E%D7%A9%D7%A4%D7%97%D7%95%D7%AA-%D7%97%D7%99%D7%99%D7%9C%D7%99%D7%9D-%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%97%D7%95%D7%91%D7%94-%D7%A0%D7%95%D7%94%D7%9C-%D7%94%D7%92%D7%A9%D7%AA-%D7%94%D7%91%D7%A7%D7%A9%D7%95%D7%AA-%D7%95%D7%90%D7%99%D7%A9%D7%95%D7%A8%D7%9F-350210/"}, {"num": "35.0402", "title": "חופשות לחיילים המשרתים בשירות חובה", "collection": "פקודות מטכ\"ל, פרק תנאי שירות 35 (חופשות ונופש)", "url": "https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%9E%D7%98%D7%9B-%D7%9C/%D7%AA%D7%A0%D7%90%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-35/%D7%97%D7%95%D7%A4%D7%A9%D7%95%D7%AA-%D7%95%D7%A0%D7%95%D7%A4%D7%A9-04/350402-%D7%97%D7%95%D7%A4%D7%A9%D7%95%D7%AA-%D7%9C%D7%97%D7%99%D7%99%D7%9C%D7%99%D7%9D-%D7%94%D7%9E%D7%A9%D7%A8%D7%AA%D7%99%D7%9D-%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%97%D7%95%D7%91%D7%94/"}, {"num": "אתר הפקודות", "title": "מאגר הפקודות הצה\"לי (את\"צ) – פקודות מטכ\"ל והוראות הפיקוד העליון", "collection": "אתר הפקודות הרשמי", "url": "https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/"}], "items": [{"id": 1, "cat": "A", "q": "מה זה תשלומי משפחה (תשמ\"ש) ומי זכאי?", "keywords": "תשמש הגדרה זכאות נשוי מבחן הכנסה", "a": "<p>תשלומי משפחה (תשמ\"ש) הם תשלום חודשי שצה\"ל משלם לחייל/ת בשירות חובה בגין נישואין, שנועד להבטיח רמת מחיה בסיסית למשפחת החייל. חייל נשוי רשאי להגיש בקשה, והזכאות נבחנת לפי <strong>מבחן הכנסה</strong> של בן/בת הזוג (ראו שאלה 3).</p><p>זכאי תשמ\"ש ברמת פעילות מתאימה זכאי גם להטבות נלוות (חצי תקרת שכר דירה, תווי חג ועוד) — אך קבלת תשמ\"ש מלא <strong>אינה מבטיחה אוטומטית</strong> את כל שאר ההטבות.</p>", "src": "מקור: פ\"מ 35.0210 (חוקת התשלומים למשפחות חיילים) + הוראת אכ\"א \"מעטפת הפרט לחייל הנשוי\"", "orders": ["35.0210"]}, {"id": 2, "cat": "A", "q": "כמה כסף מקבלים בתשמ\"ש?", "keywords": "סכום תקרה כמה כסף אחוז זכאות מלאה", "a": "<p>הסכום אינו אחיד — הוא מורכב מ<strong>תקרת זכאות</strong> שנקבעת לפי <strong>סוג בן/בת הזוג</strong>, וממנה מתבצע <strong>מבחן הכנסה</strong> (ראו שאלה 3). אלו תקרות הזכאות המלאה (100%) לפי המחשבון (עדכני לאפריל 2026; הסכומים משתנים לפי המדד):</p><table class=\"ttab\"><tr><th>סוג בן/בת הזוג</th><th>תקרה חודשית</th></tr><tr><td>אם לילד / הריון (משבוע 32)</td><td class=\"amt\">6,861 ₪</td></tr><tr><td>הריון (משבוע 14) / עובדת שאינה אם לילד / לומדת בתיכון או קורס מקצועי (35+ שע׳) / עולה חדשה</td><td class=\"amt\">5,489 ₪</td></tr><tr><td>אשת חייל שהיא חיילת או בשירות לאומי / סטודנטית (30+ שע׳)</td><td class=\"amt\">5,146 ₪</td></tr><tr><td>סטודנטית (16–29 שע׳)</td><td class=\"amt\">3,431 ₪</td></tr></table><p>הסכום הסופי יורד ככל שהכנסת בן/בת הזוג גבוהה יותר. לחישוב אישי מדויק השתמשו ב<strong>מחשבון התשמ\"ש</strong> שבתיאור הקבוצה.</p>", "src": "מקור: מחשבון התשמ\"ש של הקבוצה (עדכני לאפריל 2026); התקרות המחייבות – פ\"מ 35.0210", "orders": ["35.0210"]}, {"id": 3, "cat": "A", "q": "איך נקבעת הזכאות? (מבחן הכנסה)", "keywords": "מבחן הכנסה נוסחה משכורת בן זוג ברוטו נטו ביטוח לאומי", "a": "<p>הזכאות נקבעת ב<strong>מבחן הכנסה</strong> המבוסס על הכנסת בן/בת הזוג. נוסחת החישוב שבמחשבון: <strong>תקרת הזכאות פחות 70% מההכנסה נטו</strong> (לאחר ניכוי נקודות זיכוי).</p><p>אחוז הזכאות יורד במדרגות ככל שההכנסה גבוהה יותר. לדוגמה, עבור \"אם לילד\" (לפי הכנסה <strong>ברוטו</strong>):</p><table class=\"ttab\"><tr><th>הכנסה חודשית ברוטו</th><th>אחוז זכאות</th></tr><tr><td>עד כ־6,858 ₪</td><td class=\"amt\">100% (זכאות מלאה)</td></tr><tr><td>6,858 – 8,000 ₪</td><td class=\"amt\">88%</td></tr><tr><td>8,001 – 10,000 ₪</td><td class=\"amt\">66%</td></tr><tr><td>10,001 – 12,494 ₪</td><td class=\"amt\">33%</td></tr><tr><td>מעל 12,494 ₪</td><td class=\"amt\">0% (לא זכאי)</td></tr></table><ul><li>המשכורת הצבאית והתשמ\"ש עצמם <strong>אינם</strong> נחשבים הכנסה במבחן.</li><li>גם <strong>חסכונות</strong> גבוהים (ראו שאלה 4), <strong>בעלות על רכב</strong> יקר ו<strong>קצבאות ביטוח לאומי</strong> משפיעים על הזכאות.</li><li>הכנסה משכירות שאתם <em>מקבלים</em> נספרת (בקיזוז מול שכירות שאתם <em>משלמים</em>).</li><li><strong>מיצוי כושר השתכרות:</strong> אם בן/בת הזוג אינו/ה עובד/ת בלי סיבה מוכרת, הת\"ש עשוי לזקוף \"הכנסה רעיונית\" ולפגוע בזכאות. אם הפסיק/ה לעבוד <strong>אחרי</strong> הנישואין — הדבר עלול להיחשב כאי־מיצוי.</li></ul>", "src": "מקור: מחשבון התשמ\"ש + תשובות הקבוצה (אלעד דהן, דביר וייסברג); הכללים המחייבים – פ\"מ 35.0210", "orders": ["35.0210"]}, {"id": 4, "cat": "A", "q": "כמה חסכונות / כסף בעו\"ש מותר בלי לפגוע בתשמ\"ש?", "keywords": "חסכונות עובר ושב עוש הון מניות השקעות 42000", "a": "<p>לפי הנוסחה שנמסרה שוב ושוב בקבוצה: סכום מצטבר ב<strong>עו\"ש ובחסכונות</strong> של <span class=\"amt\">עד כ־42,000 ₪</span> אינו משפיע. מעל סכום זה — כל <span class=\"amt\">150 ₪</span> מעבר ל־42,000 ₪ נחשבים כ־<strong>1 ₪ הכנסה נוספת</strong> של בן/בת הזוג, ולכן פוגעים בזכאות בצורה הדרגתית (לרוב לא משמעותית).</p><p>גם השקעות (למשל מניות) נכללות ויש לדווח עליהן.</p>", "src": "מקור: תשובות הקבוצה (נוסחה שחוזרת מספר פעמים)", "orders": ["35.0210"]}, {"id": 5, "cat": "A", "q": "בן/בת הזוג סטודנט/ית — איך זה משפיע?", "keywords": "סטודנט סטודנטית לימודים תואר מכינה שעות", "a": "<p>קיים מסלול תשמ\"ש נפרד ל<strong>בן/בת זוג סטודנט/ית</strong>, ובו <strong>תקרות נמוכות יותר</strong> לפי היקף הלימודים: בהיקף <strong>30+ שעות שבועיות</strong> — תקרה של <span class=\"amt\">5,146 ₪</span>; בהיקף <strong>16–29 שעות</strong> — תקרה של <span class=\"amt\">3,431 ₪</span>. חשוב לבדוק את התרחיש המתאים, למשל כשהחתונה היא לאחר שבן/בת הזוג סיים/ה שנה ראשונה.</p><p><strong>שנת מכינה אינה נחשבת</strong> לצורך זה. אם אין זכאות במסלול הסטודנט/ית — ניתן להגיש בקשה לסיוע כלכלי.</p>", "src": "מקור: מחשבון התשמ\"ש + תשובות הקבוצה (דביר וייסברג)", "orders": ["35.0210"]}, {"id": 6, "cat": "A", "q": "האם חייבים לדווח על שינוי בהכנסה אחרי שאושר תשמ\"ש?", "keywords": "דיווח שינוי הכנסה ועדת ביקורת החזר חוב", "a": "<p><strong>כן — חובה.</strong> יש לדווח על <strong>כל שינוי בהכנסה</strong> של בן/בת הזוג, גם לאחר שהתשמ\"ש כבר אושר (גם אם ההכנסה ירדה וגם אם עלתה).</p><p>שימו לב: לעיתים מתבצעת <strong>ועדת ביקורת</strong> שמבקשת מחדש תלושי שכר, אישורי עו\"ש וכו׳. קבלת תשלום על תקופה שלא הייתם זכאים לו <strong>עלולה לחייב בהחזר</strong>. תיעוד מסודר של הדיווחים מגן עליכם.</p>", "src": "מקור: תשובות הקבוצה (דביר וייסברג) + פ\"מ 35.0210", "orders": ["35.0210"]}, {"id": 7, "cat": "A", "q": "איך מגישים בקשה ולמי פונים?", "keywords": "הגשת בקשה תעודת נישואין שלישות משרד תש 1111 זמן טיפול", "a": "<ul><li><strong>שינוי סטטוס לנשוי:</strong> יש להגיע עם <strong>תעודת נישואין</strong> לעדכון הסטטוס.</li><li><strong>משרד הת\"ש (תשמ\"ש):</strong> אחראי על בקשות תשלומי המשפחה וההטבות הכספיות.</li><li><strong>השלישות:</strong> אחראית על הפרטים הטכניים של החייל (חשבון בנק, פרטים אישיים). אם אינכם יודעים היכן — שאלו את המפקד.</li><li>זמן טיפול/קבלת מסמכים: עד כ־<strong>14 ימי עסקים</strong>.</li><li>ניתן לפנות למוקד <strong>1111</strong> (מדור סדירים) לבירורים.</li></ul>", "src": "מקור: תשובות הקבוצה + פ\"מ 35.0210 (נוהל הגשת הבקשות ואישורן)", "orders": ["35.0210"]}, {"id": 8, "cat": "B", "q": "חייל נשוי שאינו זכאי לתשמ\"ש — סיוע בשכר דירה", "keywords": "שכר דירה שכד לא זכאי תשמש שכירות משכנתא תקרה 1150", "a": "<p>חייל נשוי השוכר דירה (או משלם משכנתא) ו<strong>אינו</strong> זכאי לתשמ\"ש, זכאי <strong>אוטומטית</strong> להשתתפות בשכר דירה. תקרת ההשתתפות המקסימלית עומדת על <span class=\"amt\">כ־1,150 ₪ בחודש</span> (1,149.20 ₪ לפי ההוראה; משתנה לפי המדד).</p>", "src": "מקור: הוראת אכ\"א (סעיף שכר דירה) + תשובות הקבוצה", "orders": ["35.0210"]}, {"id": 9, "cat": "B", "q": "זכאי תשמ\"ש — האם מקבלים גם שכר דירה?", "keywords": "כפל תשמש שכד 50% רמפ אב לילד", "a": "<p>חייל נשוי <strong>זכאי תשמ\"ש</strong> המשרת ברמת פעילות ב׳ ומעלה זכאי גם ל־<strong>50% מתקרת שכר הדירה</strong> (סדר גודל של 600–750 ₪), בהתאם לקריטריונים:</p><ul><li>חייל חובה נשוי וזכאי תשמ\"ש — <strong>ללא תלות בילד</strong> — המשרת ברמ\"פ א׳ ומעלה.</li><li>חייל חובה נשוי וזכאי תשמ\"ש שהוא <strong>אב לילד</strong> — ברמ\"פ ב׳.</li></ul><p>קבלת תשמ\"ש מלא אינה מחייבת שתקבלו גם שכ\"ד וכל שאר ההטבות. מענה זה ניתן החל מ־01/09/2025.</p>", "src": "מקור: הוראת אכ\"א + איגרת ההטבות (\"הטבות עדכון\") + תשובות הקבוצה", "orders": ["35.0210"]}, {"id": 10, "cat": "B", "q": "זוג חיילים נשואים — כפל הטבות", "keywords": "זוג חיילים שני חיילים כפל הטבות תשמש שכד תקרה מלאה", "a": "<p>זוג <strong>חיילי חובה</strong> נשואים זה לזה (שניהם בשירות חובה) זכאים ל<strong>כפל הטבות</strong> של תשמ\"ש ושכר דירה, באופן הבא:</p><ul><li>בן/בת הזוג המשרת/ת ברמת הפעילות הגבוהה יותר — זכאי/ת ל<strong>תשמ\"ש</strong>.</li><li>בן/בת הזוג השני/ה — זכאי/ת ל<strong>שכר דירה בתקרה מלאה</strong>.</li><li>לא יוזנו שתי הטבות לאותו חייל; כל משפחה זכאית להטבת תשמ\"ש ושכ\"ד <strong>אחת</strong>.</li></ul>", "src": "מקור: איגרת ההטבות לחייל הנשוי (\"הטבות עדכון\") + הוראת אכ\"א", "orders": ["35.0210"]}, {"id": 11, "cat": "B", "q": "השתתפות באחזקת דירה / בעלות על דירה", "keywords": "אחזקת דירה בעלות דירה משכנתא אישור בעלות 181 362", "a": "<ul><li>חייל נשוי שאינו זכאי לשכ\"ד או לתשמ\"ש — זכאי ל<strong>השתתפות בהוצאות אחזקת דירה</strong> (50% על סך כ־<span class=\"amt\">181.4 ₪</span>; משתנה לפי המדד).</li><li>חייל ש<strong>בבעלותו דירה על שמו</strong>, שאינו משלם עליה משכנתא ואינו משכיר דירה אחרת — זכאי ל־100% על סך כ־<span class=\"amt\">362.80 ₪</span>. יש לצרף <strong>אישור בעלות</strong> על הדירה.</li></ul>", "src": "מקור: הוראת אכ\"א (השתתפות בהוצאות אחזקת דירה)", "orders": ["35.0210"]}, {"id": 12, "cat": "B", "q": "החזר עבור גני ילדים", "keywords": "גן ילדים מעון החזר גן טרום חובה 580 קבלות", "a": "<p>חייל חובה במצב שירות תקין, המשרת ברמ\"פ ב׳ ומעלה, שהוא הורה לילד בגילאי <strong>שלושה חודשים ועד גיל חמש</strong> (שטרם מלאו לו 5 שנים ב־1.9 של אותה שנת לימודים) המבקר בגן טרום־חובה — זכאי ל<strong>החזר עבור גני ילדים</strong>:</p><ul><li>גובה ההחזר: <span class=\"amt\">580 ₪ עבור כל ילד</span>.</li><li>משך הזכאות: עד <strong>11 חודשים</strong>.</li><li>ההחזר מותנה ב<strong>הצגת קבלות</strong>. מענה זה ניתן החל מ־01/09/2025.</li></ul>", "src": "מקור: איגרת ההטבות (\"הטבות עדכון\") + הוראת אכ\"א", "orders": ["35.0210"]}, {"id": 13, "cat": "C", "q": "מענק נישואין", "keywords": "מענק נישואין שכר טוראי אוטומטי חתונה", "a": "<p>חייל המוכר כ<strong>נשוי</strong> (או ידוע/ה בציבור) במערכות צה\"ל זכאי ל<strong>מענק נישואין</strong> בגובה <strong>100% משכר טוראי</strong>. המענק מוזן <strong>אוטומטית</strong>, והסכום משתנה מעת לעת לפי מדד המחירים לצרכן.</p>", "src": "מקור: הוראת אכ\"א (הטבות שכרניות)", "orders": ["35.0210"]}, {"id": 14, "cat": "C", "q": "מענק לידה", "keywords": "מענק לידה חד פעמי שכר טוראי בן בת", "a": "<p>מענק <strong>חד־פעמי</strong> בגובה <strong>100% משכר טוראי</strong> עבור כל <strong>לידת בן/בת</strong>. הסכום משתנה מעת לעת לפי המדד.</p>", "src": "מקור: הוראת אכ\"א (מענק לידה בן/בת)", "orders": ["35.0210"]}, {"id": 15, "cat": "C", "q": "תווי קנייה חודשיים", "keywords": "תווי קנייה 300 חודשי סיבוס אוטומטי רמפ אב לילד sms", "a": "<p>תווי קנייה אוטומטיים בסך <span class=\"amt\">300 ₪ בכל חודש</span>, <strong>ללא התניה בזכאות לתשמ\"ש</strong>, לפי הקריטריונים:</p><ul><li>חייל נשוי המשרת ברמת פעילות <strong>א׳ ומעלה</strong>, או</li><li>חייל המשרת ברמת פעילות <strong>ב׳ והוא אב לילד</strong>.</li></ul><p>אם אתם זכאים אמורה להגיע הודעת SMS. תוקף הזכאות לתו הוא <strong>60 ימים</strong>. את התווים מממשים דרך אפליקציית <strong>סיבוס (Pluxee)</strong> ברשתות המשתתפות (ראו שאלה 27). אם לא קיבלתם ואתם זכאים — פנו למשרד הת\"ש.</p>", "src": "מקור: איגרת ההטבות (\"הטבות עדכון\") + הוראת אכ\"א + תשובות הקבוצה", "orders": ["35.0210"]}, {"id": 16, "cat": "C", "q": "תווי חג / תו זהב", "keywords": "תווי חג תו זהב תשרי ניסן חגים", "a": "<p>חייל נשוי הזכאי לתשלומי משפחה זכאי ל<strong>תו זהב</strong> לקראת <strong>חגי תשרי וחגי ניסן</strong> בכל שנה. סכום התו משתנה מחג לחג.</p>", "src": "מקור: הוראת אכ\"א (הטבות נוספות — תווי חג)", "orders": ["35.0210"]}, {"id": 17, "cat": "D", "q": "חופשת נישואין", "keywords": "חופשת נישואין 10 ימים חתונה סאל חמישה ימים", "a": "<p>זכאות ל<strong>10 ימי חופשה מיוחדת</strong> לרגל הנישואין. בעת צרכים מבצעיים רשאי מפקד בדרגת <strong>סא\"ל</strong> לאשר לפחות 5 ימים (ולא 10).</p><p>ניתן לנצל את החופשה החל מ<strong>חודש לפני</strong> מועד החתונה ועד <strong>שלושה חודשים לאחר</strong> מועד החתונה.</p>", "src": "מקור: פ\"מ 35.0402 (חופשות – חופשה מיוחדת) + תשובות הקבוצה", "orders": ["35.0402"]}, {"id": 18, "cat": "D", "q": "חופשה עקב הריון בת הזוג", "keywords": "הריון בדיקות מיוחדת משפחתית 7 ימים ליווי", "a": "<p>זכאות לחופשה של <strong>עד 7 ימים</strong> בגין <strong>טיפולים או בדיקות</strong> הקשורים להריון בת הזוג. החופשה על חשבון סל \"מיוחדת משפחתית\", והמפקד מזין אותה (יש להציג מועד בדיקה וכו׳).</p>", "src": "מקור: פ\"מ 35.0402 + תשובות הקבוצה", "orders": ["35.0402"]}, {"id": 19, "cat": "D", "q": "חופשת לידה / אימוץ", "keywords": "חופשת לידה אימוץ 8 ימים פיצול לידה משוער", "a": "<p>זכאות ל־<strong>4–8 ימי חופשה</strong> (בקבוצה צוין לרוב <strong>8 ימים</strong>) עבור לידה/אימוץ. ניתן לנצל החל מ<strong>חודש לפני</strong> מועד הלידה המשוער ועד <strong>חודש לאחר</strong> הלידה, והחופשה ניתנת לפיצול. אין קשר בין חופשה זו לחופשת ההריון (שאלה 18).</p>", "src": "מקור: פ\"מ 35.0402 + תשובות הקבוצה", "orders": ["35.0402"]}, {"id": 20, "cat": "D", "q": "טיפולי פוריות וליווי בן/בת הזוג", "keywords": "פוריות טיפולים 12 16 ימים ליווי מרפאה", "a": "<ul><li>חופשה עקב <strong>טיפולי פוריות</strong>: <strong>חייל — 12 ימים</strong>, <strong>חיילת — 16 ימים</strong>.</li><li><strong>ליווי</strong> בן/בת הזוג לטיפולי פוריות: <strong>5 ימים</strong>.</li><li>אם מי שאינו פורה הוא החייל/ת — הפנייה מתבצעת דרך מרפאת היחידה.</li></ul>", "src": "מקור: פ\"מ 35.0402 + תשובות הקבוצה (דביר וייסברג)", "orders": ["35.0402"]}, {"id": 21, "cat": "D", "q": "מחלת בן/בת הזוג ומחלת ילד", "keywords": "מחלת אישה מחלת בן זוג מחלת ילד אשפוז ממארת 6 ימים 60", "a": "<ul><li><strong>מחלת בן/בת הזוג:</strong> חייל שנאלץ להישאר בבית לטיפול בבן/בת הזוג עקב מצב רפואי — זכאי לחופשה של <strong>עד 6 ימים</strong>.</li><li><strong>מחלת ילד / ליווי ילד מאושפז:</strong> הורה שנאלץ להישאר בבית לטיפול בילדו — זכאי ל־<strong>4–8 ימי חופשה בשנה</strong> קלנדרית (מביאים אישור רופא למפקד; זכאות קיימת גם אם בן/בת הזוג אינו/ה עובד/ת).</li><li>בנוסף, זכאות לחופשה של <strong>עד 60 ימים</strong> בגין <strong>מחלה ממארת</strong> של הילד.</li></ul>", "src": "מקור: פ\"מ 35.0402 (חופשות מיוחדות) + תשובות הקבוצה", "orders": ["35.0402"]}, {"id": 22, "cat": "D", "q": "יום סידורים חודשי", "keywords": "יום סידורים 24 שעות יחידה סגורה הורה לילד חודשי", "a": "<p>זכאות ל<strong>יום סידורים אחת לחודש</strong> (24 שעות מלאות בבית, על חשבון המערכת), בהכשרה הראשונית ובשירות הסדיר, עבור:</p><ul><li>חייל נשוי/ידוע בציבור המשרת ב<strong>יחידה סגורה</strong>; וכן</li><li>חייל נשוי/ידוע בציבור שהוא <strong>הורה לילד</strong> — בכל רמות הפעילות.</li></ul>", "src": "מקור: הוראת אכ\"א (הטבות נוספות — יום סידורים) + איגרת ההטבות", "orders": ["35.0402"]}, {"id": 23, "cat": "D", "q": "הקלות בתנאי שירות ושחרור מוקדם בערבי חג", "keywords": "הקלות תנאי שירות התש 03 לינה בית ערב חג 17:30 שחרור מוקדם", "a": "<ul><li><strong>הקלות בתנאי שירות:</strong> חייל נשוי שהוא <strong>אב לילד</strong> זכאי ל<strong>הת\"ש 03</strong> (שלושה לילות לינה בבית בשבוע) <strong>ללא צורך בהבאת אישורים</strong>.</li><li><strong>ערבי חג:</strong> חיילים נשואים משוחררים הביתה בערב החג עד השעה <strong>17:30</strong> לכל המאוחר.</li></ul>", "src": "מקור: הוראת אכ\"א (הקלות בתנאי שירות / הסעה מוקדמת)", "orders": ["35.0402"]}, {"id": 24, "cat": "E", "q": "חייל בודד שמתחתן בזמן השירות", "keywords": "חייל בודד מתחתן התארגנות שכר בודד גירושין מזונות חול", "a": "<ul><li><strong>3 חודשי התארגנות</strong> שבהם ממשיכים לקבל את הטבות החייל הבודד. בתקופה זו יש לוודא שמוגשת בקשה להכרה כ<strong>זכאי תשמ\"ש נשוי</strong>.</li><li>גובה הזכאות לתשמ\"ש יהיה לפחות בגובה <strong>שכר הבודד</strong> (הגבוה מביניהם), לאורך השירות.</li><li>מי שנישא <strong>עד חצי שנה מיום השחרור</strong> — זכאי להטבת בודד עד תום השירות.</li><li>מי שנישא <strong>מעל חצי שנה לפני</strong> השחרור — אינו זכאי להטבות בודד משוחרר.</li><li>חייל בודד שנישא ובן/בת הזוג מתגורר/ת ב<strong>חו\"ל</strong> — יוכר כבודד.</li><li>אב לילד שעבר גירושין והוכר כבודד — זכאי לקבלת שכ\"ד ותשמ\"ש מזונות.</li></ul>", "src": "מקור: הוראת אכ\"א (הטבות חייל בודד שנישא)", "orders": ["35.0210"]}, {"id": 25, "cat": "E", "q": "ידוע/ה בציבור — האם זכאים?", "keywords": "ידוע בציבור ידועים בציבור הכרה סטטוס", "a": "<p>ההוראה מתייחסת לחייל ה<strong>נשוי או ידוע/ה בציבור</strong> כאחד. כך, למשל, מענק הנישואין ניתן לחייל המוכר כנשוי <strong>או כידוע/ה בציבור</strong> במערכות צה\"ל, וכן הטבות נוספות (כגון יום סידורים) חלות על \"חייל נשוי/ידוע בציבור\".</p><p>לעדכון הסטטוס וההכרה יש לפנות לשלישות/משרד הת\"ש עם המסמכים המתאימים.</p>", "src": "מקור: הוראת אכ\"א (הגדרת \"נשוי/ידוע בציבור\")", "orders": ["35.0210"]}, {"id": 26, "cat": "E", "q": "הורה לילד עם מוגבלות ולידה שקטה", "keywords": "ילד מוגבלות נכות 50% לידה שקטה שבוע 22 מעטפת", "a": "<ul><li><strong>הורה לילד עם מוגבלות:</strong> עבור חייל חובה שהוא הורה לילד עם מוגבלות ניתן להגיש בקשה להזנת אינדיקציה מתאימה. נדרש <strong>אישור רשמי</strong> בדבר המוגבלות, כולל אחוז נכות של <strong>50% לפחות</strong>.</li><li><strong>לידה שקטה:</strong> חייל שחווה אובדן עקב <strong>לידה שקטה החל משבוע 22</strong> יכול לפנות למדיניות \"מעטפת הפרט עבור לידה שקטה\" לקבלת המעטפת.</li></ul>", "src": "מקור: הוראת אכ\"א (הטבות נוספות / לידה שקטה)", "orders": ["35.0210"]}, {"id": 27, "cat": "C", "q": "איך רואים ומממשים בפועל את ההטבות? (אפליקציות)", "keywords": "אפליקציה סיבוס פלוקסי רב קו מופת תש בטאץ נסיעות יתרה תלוש", "a": "<p>ההטבות הכספיות מנוהלות בכמה מערכות נפרדות — כדאי להכיר את כולן:</p><ul><li><strong>אזור אישי \"ת\"ש בטאץ'\":</strong> כאן רואים אילו הטבות אושרו לכם ומה היתרה בחוגר.</li><li><strong>סיבוס / Pluxee:</strong> אפליקציה שדרכה מממשים את <strong>תווי הקנייה</strong> (300 ₪ לחודש) ברשתות המשתתפות. אם ההתחברות נכשלת — לעיתים זו תקלה זמנית, ושווה לנסות לשלם עם החוגר עצמו.</li><li><strong>רב־קו אונליין:</strong> כאן רואים את החזר ה<strong>נסיעות/הסעות</strong>.</li><li><strong>מופת:</strong> אפליקציית <strong>תלושי השכר</strong> של צה\"ל — לבדיקת התשמ\"ש והתשלומים בתלוש.</li></ul><p>אם אתם רואים הטבה באזור האישי אך לא באפליקציה הצרכנית — בדקו שוב מול משרד הת\"ש או מוקד מופת.</p>", "src": "מקור: תשובות ומדריכי הקבוצה (מיכאל אסטנבולי ואחרים)", "orders": []}, {"id": 28, "cat": "C", "q": "הטבות צרכניות ושוברים לחיילים נשואים", "keywords": "הטבות צרכניות שוברים fox home פוקס הום הנחות רשתות מבצעים", "a": "<p>מעבר לתווי הקנייה החודשיים, מפורסמות מעת לעת ב<strong>קבוצה</strong> ובערוצי צה\"ל <strong>הטבות צרכניות ושוברים</strong> ייעודיים לחיילים נשואים (למשל שוברי רכישה מרשת <strong>FOX HOME</strong>). ההטבות משתנות לפי תקופה ומבצע.</p><ul><li>עקבו אחרי ההודעות בקבוצה ובאזור האישי לקבלת השוברים העדכניים.</li><li>שימו לב לתוקף ולרשתות המימוש של כל שובר.</li></ul>", "src": "מקור: פרסומי הקבוצה (איגרות שוברים) + הוראת אכ\"א", "orders": []}, {"id": 29, "cat": "F", "q": "הנחה בארנונה לחייל נשוי", "keywords": "ארנונה הנחה רשות מקומית עירייה 70 מטר רטרו אישור שירות", "a": "<p>חייל בשירות חובה עשוי להיות זכאי ל<strong>הנחה בארנונה</strong> מהרשות המקומית (זו הטבה של הרשות המקומית / משרד הפנים, <strong>לא</strong> של צה\"ל). לפי הניסיון בקבוצה:</p><ul><li>עד <strong>70 מ\"ר</strong> ניתן לקבל הנחה של <strong>עד 100%</strong> — בתנאי ש<strong>הארנונה רשומה על שמכם</strong> ואתם מתגוררים ומשלמים בפועל (ולא בעל הבית משלם ואתם מעבירים לו).</li><li>לעיתים ניתן לקבל את ההנחה <strong>רטרואקטיבית</strong>.</li><li>נדרש <strong>אישור על מועד גיוס ושחרור / אישור שירות</strong>. את האישור מפיקים דרך <strong>מרכז האישורים (צ׳360)</strong> או אתר \"השירות שלי\".</li></ul><p>הגישו את הבקשה ישירות למחלקת הגבייה של הרשות המקומית שלכם.</p>", "src": "מקור: תשובות הקבוצה (דביר וייסברג, יהונתן נווה); ההטבה מעוגנת בדיני ההנחות בארנונה של הרשויות המקומיות", "orders": []}, {"id": 30, "cat": "F", "q": "מענק שחרור מול פיקדון אישי — מה ההבדל?", "keywords": "מענק שחרור פיקדון אישי לימודים דירה חמש שנים מזומן", "a": "<p>אלו <strong>שני דברים נפרדים</strong> שמקבלים לקראת/עם השחרור:</p><ul><li><strong>מענק שחרור:</strong> כסף <strong>מזומן</strong> שנכנס לחשבונכם עם השחרור, לשימוש חופשי.</li><li><strong>פיקדון אישי:</strong> סכום ש\"יושב בצד\" (צה\"ל שומר עליו) ומיועד ל<strong>שימושים מוכרים</strong> — לימודים, דיור, פתיחת עסק וכד'. יתרה שלא נוצלה משתחררת כמזומן לחשבונכם בתום <strong>חמש שנים</strong> מהשחרור.</li></ul><p>לחיילים נשואים ולהורים יש לעיתים תנאים והרחבות; בדקו את הזכאות האישית מול הגורמים הרלוונטיים.</p>", "src": "מקור: תשובות הקבוצה (מיכאל אסטנבולי) + מדיניות פיקדון ומענק השחרור", "orders": []}], "contacts": [{"name": "מוקד סדירים / אכ\"א", "detail": "1111 (שלוחת מדור סדירים) – בירורי תשמ\"ש, שכ\"ד והטבות"}, {"name": "משרד הת\"ש (תנאי שירות)", "detail": "הגורם הקובע לזכאות תשמ\"ש וההטבות הכספיות ביחידה"}, {"name": "השלישות", "detail": "פרטים טכניים של החייל – חשבון בנק, סטטוס אישי, מסמכים"}, {"name": "אזור אישי \"ת\"ש בטאץ'\"", "detail": "צפייה בהטבות, יתרות ותווים הפעילים בחוגר"}], "catLetters": {"A": "א", "B": "ב", "C": "ג", "D": "ד", "E": "ה", "F": "ו"}};
-/* Current public-order metadata. The original dataset above stays untouched. */
+/* Additional public sources. The original dataset above stays untouched. */
+const EXTRA_ORDERS = [
+  {num:"35.0307",title:"השתתפות בשכר דירה, בשכר חדר או בהוצאות אחזקת דירה — חיילים בשירות חובה",collection:"פקודות מטכ״ל, תנאי שירות 35",url:"https://www.idf.il/media/zn3nzscr/350307.pdf"},
+  {num:"35.0808",title:"חיילים בודדים — עקרונות, זכויות ונהלים",collection:"פקודות מטכ״ל, תנאי שירות 35",url:"https://www.idf.il/media/rqyjrko0/%D7%A4%D7%9E-350808-%D7%9E%D7%A2%D7%95%D7%93%D7%9B%D7%A0%D7%AA-%D7%A4%D7%91%D7%A8%D7%95%D7%90%D7%A8-2021.pdf"},
+  {num:"33.0115",title:"עבודה פרטית והשתתפות חיילים בעסקים פרטיים",collection:"פקודות מטכ״ל, משטר ומשמעת 33",url:"https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%9E%D7%98%D7%9B-%D7%9C/%D7%9E%D7%A9%D7%98%D7%A8-%D7%95%D7%9E%D7%A9%D7%9E%D7%A2%D7%AA-33/%D7%9B%D7%9C%D7%9C%D7%99-01/%D7%A2%D7%91%D7%95%D7%93%D7%94-%D7%A4%D7%A8%D7%98%D7%99%D7%AA-%D7%95%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA-%D7%97%D7%99%D7%99%D7%9C%D7%99%D7%9D-%D7%91%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%A4%D7%A8%D7%98%D7%99%D7%99%D7%9D-330115/"},
+  {num:"31.0109",title:"שחרור חיילות בשירות חובה עקב נישואין או היריון",collection:"פקודות מטכ״ל, מנהלת כוח אדם 31",url:"https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%90%D7%AA%D7%A8-%D7%94%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA/%D7%A4%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%9E%D7%98%D7%9B-%D7%9C/%D7%9E%D7%A0%D7%94%D7%9C%D7%AA-%D7%9B%D7%95%D7%97-%D7%90%D7%93%D7%9D-%D7%AA%D7%A0%D7%95%D7%A2%D7%94-31/%D7%A7%D7%9C%D7%99%D7%98%D7%94-%D7%95%D7%A4%D7%9C%D7%99%D7%98%D7%94-01/%D7%A9%D7%97%D7%A8%D7%95%D7%A8-%D7%97%D7%99%D7%99%D7%9C%D7%95%D7%AA-%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%97%D7%95%D7%91%D7%94-%D7%A2%D7%A7%D7%91-%D7%A0%D7%99%D7%A9%D7%95%D7%90%D7%99%D7%9F-%D7%90%D7%95-%D7%A2%D7%A7%D7%91-%D7%94%D7%A8%D7%99%D7%95%D7%9F-310109/"}
+];
+DB.orders.push(...EXTRA_ORDERS);
+
+/* Current public-order metadata. */
 const ORDER_UPDATES = {
   "35.0402": {
     displayNum:"04.101",
@@ -253,6 +574,8 @@ DB.orders.forEach(o=>Object.assign(o,ORDER_UPDATES[o.num]||{}));
 
 const CATN = {}; DB.categories.forEach(c=>CATN[c.id]=c.name);
 const LET = DB.catLetters;
+const SHORT_CAT = {A:"תשמ״ש",B:"דיור",C:"מענקים",D:"חופשות",E:"מצבים מיוחדים",F:"זכויות אזרחיות"};
+const OPEN = new Set();
 let activeCat = "all", term = "";
 
 /* ---------- friendly one-line summaries (used as quick answers + TL;DR) ---------- */
@@ -263,8 +586,8 @@ const SUM = {
  4:"עו״ש וחסכונות של עד כ־42,000 ₪ אינם משפיעים. מעבר לכך, כל 150 ₪ נחשבים כ־1 ₪ הכנסה נוספת.",
  5:"יש מסלול נפרד לסטודנט/ית עם תקרות נמוכות יותר לפי היקף הלימודים. שנת מכינה אינה נחשבת.",
  6:"כן — חובה לדווח על כל שינוי בהכנסה (ירידה או עלייה); מי שקיבל תשלום ביתר עלול להידרש להחזירו.",
- 7:"מגיעים עם תעודת נישואין: משרד הת״ש מטפל בכסף, השלישות בפרטים הטכניים. טיפול עד כ־14 ימי עסקים, בירורים ב־1111.",
- 8:"חייל נשוי ששוכר דירה/משלם משכנתא ואינו זכאי לתשמ״ש מקבל אוטומטית השתתפות בשכר דירה.",
+ 7:"מעדכנים נישואין בשלישות ומגישים את בקשת התשמ״ש דרך סגל הת״ש. לפי הפקודה, החלטה אמורה להימסר בתוך 60 יום, למעט חריגים.",
+ 8:"חייל נשוי ששוכר דירה או משלם משכנתא ואינו זכאי לתשמ״ש עשוי להיות זכאי לסיוע בשכר דירה — לאחר הגשת בקשה ומסמכים לסגל הת״ש.",
  9:"זכאי תשמ״ש ברמת פעילות מתאימה מקבל גם 50% מתקרת שכר הדירה. קבלת תשמ״ש אינה מבטיחה אוטומטית את שאר ההטבות.",
  10:"כששני בני הזוג חיילי חובה יש כפל הטבות: אחד מקבל תשמ״ש והשני שכר דירה בתקרה מלאה.",
  11:"מי שאינו זכאי לשכ״ד/תשמ״ש מקבל השתתפות באחזקת דירה; בעל דירה על שמו (בלי משכנתא/השכרה) מקבל 100%.",
@@ -278,8 +601,8 @@ const SUM = {
  19:"8 ימי חופשה ללידה או לאימוץ; בחירום ניתן לצמצם ל־5 ימים בשל צורך מבצעי.",
  20:"16 ימי חופשה לטיפולי פוריות; ליווי בן/בת הזוג לטיפולים — 5 ימים נוספים.",
  21:"מצב רפואי של בן/בת זוג — 6 ימים; מצב רפואי של ילד — 8 ימים; מחלה ממארת של ילד — עד 60 ימים.",
- 22:"יום שלם בבית (24 שעות) לסידורים — ליחידה סגורה, ולהורה לילד בכל רמת פעילות.",
- 23:"אב לילד זכאי להת״ש 03 (3 לינות בבית בשבוע) בלי אישורים; בערבי חג משתחררים עד 17:30.",
+ 22:"יום שלם בבית לסידורים: אחת לחודש בהכשרה הראשונית, ואחת לחודשיים בשירות הסדיר, לפי תנאי הזכאות.",
+ 23:"אב לילד זכאי להת״ש 03 לפי ההוראה; בערב חג יש לשחרר בזמן שמאפשר להגיע הביתה לפחות שעתיים לפני כניסת החג, לפי התחבורה הזמינה.",
  24:"3 חודשי התארגנות עם הטבות בודד, והתשמ״ש לא יפחת משכר הבודד. יש כללי זמן לגבי הטבות בודד משוחרר.",
  25:"כן — ההוראה חלה על נשוי ועל ידוע/ה בציבור כאחד. לעדכון הסטטוס פונים לשלישות/ת״ש עם מסמכים.",
  26:"הורה לילד עם 50%+ נכות יכול להזין אינדיקציה; לידה שקטה משבוע 22 — פנייה למעטפת הפרט.",
@@ -322,11 +645,12 @@ const ENRICH = {
  2:'<p class="note">לתשומת לב: מקורות ציבוריים (כל־זכות) נוקבים בתקרה מרבית נמוכה יותר — סדר גודל של כ־<strong>5,850 ₪</strong>. התקרות מתעדכנות לפי המדד; המספרים כאן הם לפי מחשבון הקבוצה (אפריל 2026), והקובע העדכני הוא משרד הת״ש.</p>',
  8:'<p class="note">לפי כל־זכות, תקרת ההשתתפות בשכר דירה נמוכה יותר — סדר גודל של כ־<strong>795 ₪</strong> לחודש. הסכום מתעדכן לפי המדד; לאימות הסכום המדויק פנו למשרד הת״ש. (מקור: כל־זכות)</p>',
  11:'<p class="note">לפי כל־זכות, ההשתתפות באחזקת דירה עומדת על סדר גודל של כ־<strong>170 ₪</strong> (50%). הסכומים מתעדכנים לפי המדד. (מקור: כל־זכות)</p>',
+ 12:'<p class="note">החזר צה״ל אינו מחליף בקשה נפרדת לסבסוד ממשלתי של מעון, משפחתון או צהרון מוכר. למסגרת בעלת סמל ניתן לבדוק ולהגיש בקשה מקוונת ב<a href="https://www.gov.il/he/service/daycare-center-parents-request-degree-of-subsidy" target="_blank" rel="noopener noreferrer">אתר משרד העבודה ↗</a>; הדרגה והאינטראקציה עם החזר צה״ל תלויות במקרה.</p>',
  17:'<p class="note">פקודת החופשות עודכנה ומספרה שונה מ־35.0402 ל־<strong>פ״מ 04.101</strong>. הקישור למטה מוביל לנוסח הרשמי העדכני באתר הפקודות. (מקור: את״צ)</p>',
- 22:'<p class="note">לתשומת לב: בחלק מהמקורות, בשירות הסדיר יום הסידורים ניתן אחת לחודשיים (ולא מדי חודש). ודאו מול היחידה/הת״ש. (מקור: כל־זכות)</p>',
  13:'<p class="note">בפועל מדובר בכ־<strong>1,260 ₪</strong> (100% משכר טוראי, מתעדכן לפי המדד). לפי מקורות ציבוריים (כל־זכות).</p>',
  14:'<p class="note">הסכום כ־<strong>1,260 ₪</strong> לכל לידה (100% משכר טוראי) — בנפרד ובנוסף למענק הלידה של ביטוח לאומי (ראו שאלה 31). (כל־זכות)</p>',
  23:'<p class="note">להת״ש 03 נלווית לרוב גם <strong>הצבה עד כ־100 ק״מ</strong> מהבית, ככל שהדבר מתאפשר מבצעית. (מקור: הנחיות את״צ / כל־זכות)</p>',
+ 27:'<p class="note"><strong>אם הטבה אושרה אבל לא מופיעה:</strong> שמרו צילום מסך ותאריך, בדקו שהטלפון ופרטי הזיהוי מעודכנים, ובדקו אם תשלום כספי מופיע בתלוש מופת. פנו קודם לסגל הת״ש עם תיעוד; אל תפרסמו מספר אישי, תעודת זהות או צילום תלוש בקבוצה.</p>',
  29:'<p class="note">ממקורות ציבוריים: ההנחה חלה גם עד <strong>4 חודשים לאחר השחרור</strong>; היא ניתנת על <strong>70 מ״ר</strong> (ו־<strong>90 מ״ר</strong> למשק בית של 5 נפשות ומעלה), ורק לדירה שאתם גרים בה בפועל ורשומים בה. נדרש אישור שירות מקצין העיר/השלישות. (מקור: כל־זכות; תקנות ההנחה מארנונה)</p>'
 };
 
@@ -363,30 +687,69 @@ const EXTRA_ITEMS = [
   src:"מקור: האגף והקרן לחיילים משוחררים, משרד הביטחון (hachvana.mod.gov.il)", orders:[]}
 ];
 DB.items.push(...EXTRA_ITEMS);
+const V3_ITEMS = [
+ {id:33,cat:"A",q:"הבקשה מתעכבת או הסכום לא נכון — מה עושים?",keywords:"עיכוב תשובה 60 יום שישים רטרו רטרואקטיבי ערעור השגה עיון מחדש טופס 63 הפרשים לא נכנס",
+  a:'<p>לפי פ״מ 35.0210, מדור תשמ״ש אמור למסור תשובה לבקשה בתוך <strong>60 ימים לכל היותר</strong> ממועד ההגשה, למעט מקרים חריגים. ההחלטה והנימוקים ניתנים בטופס 63 ומועברים ליחידה, שאמורה להביא אותם לידיעת החייל.</p><ol><li><strong>לפני הכול:</strong> ודאו שהבקשה נקלטה ושלא חסר מסמך. שמרו תאריך הגשה, עותק ואישור מסירה.</li><li><strong>בירור תשלום או אי־תשלום:</strong> נעשה באמצעות המפקד, קצין/ת הת״ש או רכז/ת הת״ש ביחידה.</li><li><strong>סכום שגוי או שינוי נסיבות:</strong> אפשר לבקש עיון מחדש אם התגלו עובדות חדשות, חל שינוי או שההחלטה הקודמת הייתה שגויה.</li><li><strong>השגה:</strong> מי שנפגע מהחלטת הרשות רשאי להגיש לוועדה המיוחדת מכתב השגה מנומק.</li></ol><p><strong>לגבי רטרו:</strong> הרשות יכולה לתת להחלטה תוקף למפרע. ככלל נקודת המוצא היא המאוחר מבין מועד הגיוס ומועד הגשת הבקשה, ולא ניתן להקדים ביותר משישה חודשים לפני ההגשה אלא אם טעמים מיוחדים מנעו הגשה בזמן.</p>',
+  src:"מקור: פ״מ 35.0210 — החלטה למפרע, עיון מחדש, השגה ואופן ביצוע הבקשה",orders:["35.0210"]},
+ {id:34,cat:"B",q:"איזה חוזה שכירות צריך כדי לקבל סיוע?",keywords:"חוזה שכירות תקין מסמכים חתימות תעודת זהות כתובת אמצעי תשלום רטרו 933",
+  a:'<p>חוזה תקין צריך להיות <strong>חתום, מלא וברור</strong>. לפי איגרת ההטבות של הקבוצה, כדאי לבדוק שמופיעים בו:</p><ul><li>מספרי תעודת זהות וחתימות של כל הצדדים.</li><li>תקופת השכירות ותאריך חתימת החוזה.</li><li>סכום השכירות החודשי ואופן התשלום.</li><li>הכתובת המלאה של הנכס.</li><li>חתימות כל הצדדים ליד כל שינוי שנעשה בחוזה.</li></ul><p>מגישים עותק באמצעות סגל הת״ש. פ״מ 35.0307 קובעת שהחוזה נבדק לתוקף, שהאישור ניתן לכל היותר לשנה או עד סוף שירות החובה — המוקדם מביניהם — ושניתן לאשר תשלום בדיעבד עד שישה חודשים; חריג מעבר לכך דורש אישור מיוחד.</p>',
+  src:"מקור: איגרת הטבות לחיילים נשואים, ספטמבר 2025 + פ״מ 35.0307",orders:["35.0307"]},
+ {id:35,cat:"F",q:"האם חיילים זכאים להנחה בחשבון החשמל?",keywords:"חשמל הנחה חברת החשמל 50 אחוז 400 קוטש ספק פרטי חשבון על השם שכר דירה רחוק מהבית",
+  a:'<p><strong>בחלק מהמקרים — כן, אבל לא מעצם הנישואין ולא מעצם קבלת תשמ״ש.</strong> ההטבה מיועדת לקטגוריה של חייל/ת בשירות סדיר שמקבל/ת מצה״ל השתתפות בשכר דירה בשל שירות הרחק מהבית, בהתאם לדיווח הזכאות.</p><ul><li>ההפחתה היא <strong>50% מהתעריף הביתי על 400 הקוט״ש הראשונים בכל חודש</strong>.</li><li>החשבון צריך להיות רשום על שם הזכאי ובפרטי זהות תואמים.</li><li>הזכאות אמורה להתעדכן אוטומטית; אם אינה מופיעה, ודאו התאמת פרטים מול ספק החשמל ומול סגל הת״ש.</li><li>הזכאות נשמרת גם במעבר לספק חשמל פרטי, בכפוף לקליטת הזיהוי אצל הספק.</li></ul><p><a href="https://www.iec.co.il/content/tariffs/contentpages/socialtariff" target="_blank" rel="noopener noreferrer">בדיקת תנאי התעריף המופחת באתר חברת החשמל ↗</a></p>',
+  src:"מקור: חברת החשמל — תעריף חברתי; פ״מ 35.0307 לעניין סיוע הדיור",orders:["35.0307"]},
+ {id:36,cat:"D",q:"עוברים דירה — מגיעים אוטומטית שני ימי חופש?",keywords:"מעבר דירה עוברים בית יומיים שני ימים חופשה מיוחדת חייל בודד",
+  a:'<p><strong>לא קיימת זכאות אוטומטית של יומיים לכל חייל נשוי.</strong> בפקודה הציבורית הזכאות המפורשת לשני ימי חופשה עקב מעבר דירה ניתנת לחייל בודד, באישור מפקד בדרגת רס״ן לפחות ועל חשבון החופשה המיוחדת האישית.</p><p>פ״מ 04.101 אינה קובעת זכות מקבילה של יומיים לכל נשוי. מי שאינו מוכר כחייל בודד יכול לבקש חופשה שנתית או חופשה מיוחדת אישית בהתאם לנסיבות, אך האישור וההיקף תלויים במקרה ובגורם המאשר. אל תסתמכו על הודעה ישנה בקבוצה בלי אישור מהיחידה.</p>',
+  src:"מקור: פ״מ 35.0808 (חיילים בודדים) + פ״מ 04.101 (חופשות חובה)",orders:["35.0808","35.0402"]},
+ {id:37,cat:"E",q:"אפשר לעבוד או לפתוח עוסק בזמן השירות?",keywords:"עבודה פרטית היתר עבודה שכיר עצמאי עוסק עסק הכנסה מצוקה כלכלית מחוץ לשעות",
+  a:'<p><strong>רק לאחר קבלת היתר עבודה פרטית בכתב.</strong> ככלל אסור לחייל לעסוק בעבודה פרטית בלי היתר — גם מחוץ לשעות הפעילות. ההגדרה רחבה וכוללת עבודה או עיסוק שנהוג לקבל תמורתם שכר או רווח.</p><ul><li>בהיתר מטעמי מצוקה כלכלית ניתן לקבל שכר עבור העבודה.</li><li>הבקשה מוגשת בצינורות הפיקוד ובאמצעות גורמי הת״ש בהתאם לסוג ההיתר.</li><li>היתר ניתן לתקופה של עד שנה; לחידוש מגישים בקשה חדשה.</li><li>פתיחת עוסק או פעילות עסקית אינה מחליפה את ההיתר הצבאי, ובעלות או שליטה בעסק עשויות לדרוש אישור נוסף.</li></ul><p>דווחו בנפרד על שינויי הכנסה שמשפיעים על בקשת התשמ״ש; היתר עבודה וזכאות לתשמ״ש הם שני הליכים שונים.</p>',
+  src:"מקור: פ״מ 33.0115 — עבודה פרטית והשתתפות חיילים בעסקים פרטיים",orders:["33.0115"]},
+ {id:38,cat:"C",q:"צריך ריהוט או מוצרי חשמל — יש מענק אוטומטי?",keywords:"ריהוט מקרר מכונת כביסה תנור מוצרי חשמל קרן סיוע מענק בזק הלוואה מצוקה כלכלית",
+  a:'<p><strong>לא אוטומטית בשל נישואין או מעבר דירה.</strong> חייל שמציג צורך כלכלי נקודתי יכול להגיש בקשת סיוע דרך סגל הת״ש. סוג המענה והיקפו נקבעים לאחר בחינת המצב ובאישור הגורם המתאים.</p><p>כלי הסיוע שמפרסם צה״ל כוללים מענק, הלוואה, מענק בזק, תווי קנייה ו<strong>קרן סיוע לציוד כגון מוצרי חשמל וריהוט</strong>. התקרות והתקציב עשויים להשתנות, ולכן עדיף לא לבנות על סכום לפני קבלת אישור.</p><p><a href="https://m.www.idf.il/%D7%94%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A9%D7%9C%D7%99/%D7%AA%D7%A0%D7%90%D7%99-%D7%94%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%91%D7%A6%D7%94-%D7%9C/%D7%AA-%D7%A9/%D7%A1%D7%99%D7%95%D7%A2-%D7%9B%D7%9C%D7%9B%D7%9C%D7%99-%D7%A9%D7%90%D7%99%D7%A0%D7%95-%D7%9E%D7%95%D7%AA%D7%A0%D7%94-%D7%91%D7%94%D7%9B%D7%A8%D7%94-%D7%9B%D7%97%D7%99%D7%99%D7%9C-%D7%91%D7%95%D7%93%D7%93/" target="_blank" rel="noopener noreferrer">כלי הסיוע הכלכלי באתר צה״ל ↗</a></p>',
+  src:"מקור: אתר צה״ל — סיוע כלכלי שאינו מותנה בהכרה כחייל בודד",orders:[]},
+ {id:39,cat:"D",q:"אירוע משפחתי של קרוב — כמה חופשה מקבלים?",keywords:"שמחה משפחתית חתונה ברית זבד הבת בר מצווה בת מצווה קרוב אחיין 24 שעות נסיעה",
+  a:'<p>לחתונה, ברית/זבד הבת או בר/בת מצווה של קרוב מדרגה ראשונה או אחיין ניתן לקבל <strong>24 שעות חופשה</strong>.</p><ul><li>זמני הנסיעה מהיחידה ובחזרה <strong>אינם נספרים</strong> בתוך 24 השעות.</li><li>החופשה נגרעת מהחופשה השנתית; אם נגמרו ימי החופשה השנתית וימי המפקד, היא תחושב על חשבון החופשה המיוחדת המשפחתית.</li><li>מפקד בדרגת אל״ם לפחות רשאי לשלול אותה רק בהתקיים נסיבות מבצעיות מחייבות.</li></ul>',
+  src:"מקור: פ״מ 04.101 — חופשה בשל שמחה משפחתית",orders:["35.0402"]},
+ {id:40,cat:"E",q:"מה קורה כשחיילת בשירות חובה מתחתנת?",keywords:"חיילת חובה נישואין שחרור פטור 21 ימים עשרה ימים התנדבות המשך שירות",
+  a:'<p>חיילת בשירות חובה שנישאה <strong>פטורה משירות סדיר ומשוחררת לפי התהליך שבפקודה</strong>, אלא אם התחייבה או התנדבה להמשיך לשרת למרות הנישואין.</p><ul><li>יש להודיע למפקד/ת לפחות <strong>21 ימים לפני החתונה</strong>.</li><li>לא יאוחר מ־<strong>10 ימים לאחר הנישואין</strong> מתייצבים במדור השחרורים עם המסמכים הנדרשים.</li><li>מי שרוצה להמשיך בשירות צריכה להסדיר זאת מראש מול גורמי כוח האדם.</li></ul><p>הסעיף תלוי במעמד השירות ובהתחייבויות קיימות; לכן חשוב לקבל הנחיה אישית לפני מועד הנישואין.</p>',
+  src:"מקור: פ״מ 31.0109 — שחרור חיילות בשירות חובה עקב נישואין או היריון",orders:["31.0109"]}
+];
+DB.items.push(...V3_ITEMS);
 SUM[31]="מענק הלידה של ביטוח לאומי נפרד ממענק צה״ל ומשולם בדרך כלל אוטומטית לזכאית; אם מתקיימים התנאים, אפשר לקבל את שניהם.";
 SUM[32]="כן — נישואין הם מטרה מוכרת למימוש הפיקדון האישי אחרי השחרור, דרך האגף לחיילים משוחררים.";
-SYN.push(["ביטוח לאומי","המוסד לביטוח לאומי","בטל","btl"]);
+SUM[33]="החלטת תשמ״ש אמורה להימסר בתוך 60 יום, למעט חריגים. אם התשלום מתעכב או שגוי — בודקים קליטה, מבקשים עיון מחדש ובמידת הצורך מגישים השגה מנומקת.";
+SUM[34]="חוזה מלא וחתום צריך לכלול זהויות, תקופה, תאריך, סכום, אופן תשלום וכתובת; כל שינוי דורש חתימות.";
+SUM[35]="הנחת חשמל אינה ניתנת אוטומטית לכל נשוי או זכאי תשמ״ש; היא תלויה בקטגוריית סיוע הדיור המדווחת ובהתאמת פרטי החשבון.";
+SUM[36]="שני ימי מעבר דירה הם זכות מפורשת לחייל בודד — לא זכות אוטומטית לכל חייל נשוי. לאחרים האישור תלוי בנסיבות ובגורם המאשר.";
+SUM[37]="עבודה כשכיר או פעילות עסקית בזמן השירות דורשות היתר עבודה פרטית בכתב. פתיחת עוסק אינה מחליפה את ההיתר.";
+SUM[38]="ריהוט ומוצרי חשמל אינם מענק נישואין אוטומטי, אך ניתן לבקש סיוע כלכלי דרך סגל הת״ש בהתאם לצורך ולאישור.";
+SUM[39]="שמחה משפחתית של קרוב מזכה ב־24 שעות; זמן הנסיעה מהיחידה ובחזרה אינו נכלל במכסה.";
+SUM[40]="חיילת חובה שנישאה משתחררת לפי התהליך שבפקודה, אלא אם הסדירה מראש התחייבות או התנדבות להמשך שירות.";
+SYN.push(["ביטוח לאומי","המוסד לביטוח לאומי","בטל","btl"],["חשמל","חברת החשמל","קוטש","ספק חשמל"],["עבודה","עוסק","עסק","היתר עבודה","עצמאי"],["עיכוב","מתעכב","רטרו","השגה","ערעור"]);
 SYNN.length=0; SYN.forEach(g=>SYNN.push(g.map(norm)));
 
 /* ---------- deduplicated rewrites: the chart replaces the table, prose carries the rules ---------- */
 const REWRITE = {
  2:'<p>הסכום אינו אחיד: לכל משפחה נקבעת <strong>תקרת זכאות</strong> לפי מצב בן/בת הזוג, וממנה נגזר הסכום בפועל דרך <strong>מבחן ההכנסה</strong> (שאלה 3). בתרשים למטה — תקרות הזכאות המלאה (100%) לפי מחשבון הקבוצה (אפריל 2026; מתעדכן לפי המדד).</p><p><strong>בקצרה:</strong> התקרה הגבוהה ביותר — עד <span class="amt">6,861 ₪</span> — ניתנת במצבי אם לילד או הריון מתקדם. ההכנסה קובעת כמה מהתקרה תקבלו בפועל; לחישוב אישי מדויק השתמשו ב<strong>מחשבון התשמ"ש</strong> שבתיאור הקבוצה.</p>',
  3:'<p>הזכאות נקבעת ב<strong>מבחן הכנסה</strong> של בן/בת הזוג. הנוסחה שבמחשבון: <strong>תקרת הזכאות פחות 70% מההכנסה נטו</strong> (אחרי נקודות זיכוי). נוח לחשוב על זה במדרגות של הכנסה <strong>ברוטו</strong> — בדיוק מה שמציגים התרשים והמחשבון שלמטה (דוגמת "אם לילד").</p><ul><li>המשכורת הצבאית והתשמ"ש עצמם <strong>אינם</strong> נחשבים הכנסה במבחן.</li><li>גם <strong>חסכונות</strong> גבוהים (שאלה 4), <strong>רכב</strong> יקר ו<strong>קצבאות ביטוח לאומי</strong> משפיעים.</li><li>שכירות שאתם <em>מקבלים</em> נספרת (בקיזוז שכירות שאתם <em>משלמים</em>).</li><li><strong>מיצוי כושר השתכרות:</strong> בן/בת זוג שאינו/ה עובד/ת ללא סיבה מוכרת — הת"ש עשוי לזקוף "הכנסה רעיונית"; הפסקת עבודה <strong>אחרי</strong> החתונה עלולה להיחשב אי־מיצוי.</li></ul>',
+ 7:'<ol><li><strong>עדכון המעמד האישי:</strong> מוסרים תעודת נישואין לשלישות ומוודאים שהסטטוס עודכן ברשומות הצבא.</li><li><strong>פתיחת בקשה:</strong> מגישים ביחידה באמצעות קצין/ת או רכז/ת הת״ש. לפי פ״מ 35.0210, בקשת תשמ״ש מוגשת בסיוע סגל הת״ש.</li><li><strong>מסמכים:</strong> מצרפים את האסמכתאות שנדרשו להכנסה, מצב משפחתי, לימודים, היריון, דיור או נסיבות אחרות. הרשות רשאית לבקש מסמכים נוספים.</li><li><strong>מעקב:</strong> שמרו עותק ותאריך הגשה. מדור תשמ״ש אמור למסור החלטה מנומקת בתוך <strong>60 ימים לכל היותר</strong>, למעט מקרים חריגים.</li></ol><p>לבירור על תשלום או אי־תשלום פונים דרך המפקד וסגל הת״ש ביחידה. מוקד 1111 יכול לסייע בהכוונה, אך הגורם המטפל בבקשה הוא סגל הת״ש.</p>',
+ 8:'<p>חייל נשוי ששוכר דירה או משלם משכנתא ואינו זכאי לתשמ״ש <strong>עשוי להיות זכאי להשתתפות בשכר דירה</strong>, בכפוף לתנאים ולאישור. עדכון הנישואין לבדו אינו תחליף לבקשת דיור.</p><ol><li>פונים לסגל הת״ש ומגישים בקשה עם חוזה שכירות חתום או אסמכתאות למשכנתא, לפי העניין.</li><li>מוודאים שהמסמכים נקלטו ושומרים עותק ותאריך הגשה.</li><li>לאחר האישור בודקים שההטבה מופיעה בתלוש; שינוי חוזה או כתובת מחייב עדכון.</li></ol><p>לפי הוראת אכ״א ומסמכי הקבוצה, תקרת ההשתתפות היא בסדר גודל של כ־<strong>1,150 ₪ בחודש</strong> ומתעדכנת לפי המדד. פ״מ 35.0307 מסדירה את תוקף החוזה, תקופת האישור והתשלום למפרע; ראו גם שאלה 34.</p>',
  17:'<p>לרגל הנישואין מגיעים <strong>10 ימי חופשה מיוחדת משפחתית</strong>. במצב חירום, ורק בשל צרכים מבצעיים, מפקד בדרגת סא״ל לפחות רשאי לצמצם את החופשה ל־<strong>5 ימים</strong>.</p><ul><li>אפשר לנצל את הימים החל מ<strong>חודש לפני</strong> הנישואין ועד <strong>חודש אחריהם</strong>.</li><li><strong>יום הנישואין נספר</strong> במניין הימים.</li><li>אפשר לפצל את החופשה לבקשת החייל ובאישור המפקד.</li></ul>',
  18:'<p>חייל שבת זוגו בהיריון זכאי ל־<strong>3 ימי חופשה שנתית בסך הכול במהלך ההיריון</strong> לצורך טיפולים או בדיקות הקשורים להיריון.</p><p>לבקשה מצרפים הצהרה ואישורים רפואיים. הימים מנוכים ממכסת החופשה השנתית — לא מסל החופשה המיוחדת המשפחתית.</p>',
  19:'<p>לרגל <strong>לידה של בת הזוג</strong> מגיעים <strong>8 ימי חופשה מיוחדת משפחתית</strong>. במצב חירום ניתן לצמצם ל־5 ימים בשל צורך מבצעי ובאישור מפקד בדרגת סא״ל לפחות.</p><ul><li>אפשר לנצל מחודש לפני מועד הלידה ועד חודש אחריה.</li><li>יום הלידה, יום הברית ויום זבד הבת נספרים במניין הימים.</li><li>באימוץ ילד עד גיל 10 מגיעים 8 ימים; אם שני ההורים המאמצים חיילים, רק אחד מהם מנצל את החופשה.</li></ul>',
  20:'<p>לצורך <strong>טיפולי פוריות</strong> מגיעים <strong>16 ימי חופשה מיוחדת משפחתית</strong>. מי שמלווה את בן/בת הזוג לטיפולים זכאי ל־<strong>5 ימים</strong>.</p><p>לבקשה מצרפים הצהרה הנתמכת באישור מהמוסד הרפואי שבו מבוצע הטיפול.</p>',
  21:'<ul><li><strong>מצב רפואי של בן/בת הזוג:</strong> עד <strong>6 ימים</strong>, כאשר בן/בת הזוג תלוי/ה בזולת בביצוע פעולות יום־יום; יש לצרף אישור רפואי.</li><li><strong>מצב רפואי של ילד:</strong> עד <strong>8 ימים</strong>, אם הילד בחזקתו הבלעדית של החייל, או אם ההורה האחר עובד ולא נעדר מעבודתו בשל מחלת הילד; נדרשים אישורים רפואיים והצהרה.</li><li><strong>מחלה ממארת של ילד</strong> הנמצא בחזקת החייל: עד <strong>60 ימים</strong>.</li></ul>',
+ 22:'<p>חייל נשוי/ידוע בציבור שמשרת ביחידה סגורה, וכן חייל נשוי/ידוע בציבור שהוא הורה לילד בכל רמת פעילות, זכאי ליום סידורים של <strong>24 שעות בבית</strong> על חשבון המערכת.</p><ul><li>ב<strong>הכשרה הראשונית</strong>: אחת לחודש.</li><li>ב<strong>שירות הסדיר</strong>: אחת לחודשיים.</li></ul><p>היישום כפוף לעדכון הזכאות במערכת ולתיאום ביחידה. אם קיבלתם תשובה של "כל חודש" לאורך כל השירות, בקשו לבדוק מול ההנחיה העדכנית.</p>',
+ 23:'<ul><li><strong>הת״ש 03:</strong> חייל נשוי שהוא אב לילד זכאי לשלוש לינות בבית בשבוע לפי הוראת המעטפת, בכפוף להזנה ולחריגים המבצעיים שבדין.</li><li><strong>ערב חג:</strong> לפי פ״מ 04.101, יש לשחרר חייל בזמן שמאפשר לו להגיע לביתו לפחות <strong>שעתיים לפני כניסת החג</strong>, בהתחשב באמצעי התחבורה העומדים לרשותו. אין בפקודה הציבורית שעה אחידה של 17:30 לכל מקום.</li></ul>',
  30:'<p><strong>מענק השחרור</strong> ו<strong>הפיקדון האישי</strong> הם שני תשלומים נפרדים:</p><ul><li><strong>מענק שחרור:</strong> מועבר לחשבון הבנק בתוך כ־60 יום מהשחרור, לשימוש חופשי.</li><li><strong>פיקדון אישי:</strong> ניתן למימוש מהיום ה־14 לאחר השחרור, בחמש השנים הראשונות, לשש מטרות שקבועות בחוק: לימודים, הכשרה מקצועית, נישואין, הקמת עסק, לימודי נהיגה ורכישת דירה, בית או קרקע לבניית בית.</li><li>יתרה שלא נוצלה מועברת אוטומטית לחשבון הבנק בחלוף חמש שנים, לפי כללי האגף לחיילים משוחררים.</li></ul>'
 };
 
 /* ---------- worked real-life examples ---------- */
 const CASES = {
- 3:'<p class="case">💡 <strong>דוגמה מהחיים:</strong> בת זוג שהיא אם לילד עם 6,000 ₪ ברוטו — תשמ"ש מלא, 6,861 ₪ בחודש. עם 9,000 ₪ — כ־4,530 ₪. עם 13,000 ₪ — ככל הנראה 0 ₪. נסו את המחשבון למטה עם המספר שלכם.</p>',
- 9:'<p class="case">💡 <strong>דוגמה:</strong> חייל נשוי עם תשמ"ש מלא שמשרת ברמ"פ א׳ — יקבל בנוסף לתשמ"ש גם כמחצית מתקרת שכר הדירה, גם אם אין לו ילדים.</p>',
- 10:'<p class="case">💡 <strong>דוגמה:</strong> הוא לוחם (רמ"פ גבוהה) והיא בתפקיד עורפי, שניהם בשירות חובה — הוא יקבל את התשמ"ש, והיא שכר דירה בתקרה מלאה. המשפחה נהנית משתי ההטבות במקביל.</p>',
- 24:'<p class="case">💡 <strong>דוגמה:</strong> חייל בודד שהתחתן בתחילת ינואר — ממשיך בהטבות בודד עד תחילת אפריל (3 חודשי התארגנות). אם יגיש בקשת תשמ"ש מיד אחרי החתונה, המעבר יהיה רציף — והתשמ"ש לא יפחת משכר הבודד.</p>',
- 29:'<p class="case">💡 <strong>דוגמה:</strong> דירת 85 מ"ר שהארנונה בה רשומה על שמכם — פטור מלא על 70 המ"ר הראשונים, ותשלום רק על 15 הנותרים. בדירת 60 מ"ר — פטור על כל השטח.</p>'
+ 3:'<p class="case"><strong>דוגמה מהחיים</strong><br>בת זוג שהיא אם לילד עם 6,000 ₪ ברוטו — תשמ"ש מלא, 6,861 ₪ בחודש. עם 9,000 ₪ — כ־4,530 ₪. עם 13,000 ₪ — ככל הנראה 0 ₪. נסו את המחשבון למטה עם המספר שלכם.</p>',
+ 9:'<p class="case"><strong>דוגמה</strong><br>חייל נשוי עם תשמ"ש מלא שמשרת ברמ"פ א׳ — יקבל בנוסף לתשמ"ש גם כמחצית מתקרת שכר הדירה, גם אם אין לו ילדים.</p>',
+ 10:'<p class="case"><strong>דוגמה</strong><br>הוא לוחם (רמ"פ גבוהה) והיא בתפקיד עורפי, שניהם בשירות חובה — הוא יקבל את התשמ"ש, והיא שכר דירה בתקרה מלאה. המשפחה נהנית משתי ההטבות במקביל.</p>',
+ 24:'<p class="case"><strong>דוגמה</strong><br>חייל בודד שהתחתן בתחילת ינואר — ממשיך בהטבות בודד עד תחילת אפריל (3 חודשי התארגנות). אם יגיש בקשת תשמ"ש מיד אחרי החתונה, המעבר יהיה רציף — והתשמ"ש לא יפחת משכר הבודד.</p>',
+ 29:'<p class="case"><strong>דוגמה</strong><br>דירת 85 מ"ר שהארנונה בה רשומה על שמכם — פטור מלא על 70 המ"ר הראשונים, ותשלום רק על 15 הנותרים. בדירת 60 מ"ר — פטור על כל השטח.</p>'
 };
 
 /* keep table terms searchable although the tables became charts */
@@ -401,6 +764,21 @@ const KW = {
  30:"שש מטרות לימודי נהיגה רכישת דירה בית קרקע היום ה־14"
 };
 
+const SOURCE_UPDATES = {
+ 3:"מקור: מחשבון התשמ״ש ומדריכי הקבוצה; הכללים המחייבים — פ״מ 35.0210",
+ 5:"מקור: מחשבון התשמ״ש ומדריכי הקבוצה",
+ 6:"מקור: מדריכי הקבוצה + פ״מ 35.0210",
+ 7:"מקור: פ״מ 35.0210 — נוהל הגשת בקשות, מסמכים ומועד החלטה",
+ 8:"מקור: פ״מ 35.0307 + הוראת אכ״א ומסמכי הקבוצה",
+ 20:"מקור: פ״מ 04.101 + מדריכי הקבוצה",
+ 22:"מקור: מידע רשמי של משרד הביטחון/צה״ל בנושא תנאי שירות + איגרת ההטבות",
+ 23:"מקור: הוראת אכ״א (הת״ש 03) + פ״מ 04.101 (ערבי חג)",
+ 27:"מקור: מדריכי התפעול של הקבוצה",
+ 29:"מקור: מדריכי הקבוצה + דיני ההנחות בארנונה של הרשויות המקומיות",
+ 30:"מקור: מדיניות האגף לחיילים משוחררים בנושא הפיקדון ומענק השחרור"
+};
+const ITEM_ORDER_UPDATES = {8:["35.0307"]};
+
 /* merge the extra layers into the data without touching the source JSON */
 DB.items.forEach(it=>{
   if(SUM[it.id]) it.sum=SUM[it.id];
@@ -409,50 +787,57 @@ DB.items.forEach(it=>{
   if(CASES[it.id]) it.a+=CASES[it.id];
   if(KW[it.id]) it.keywords=(it.keywords||"")+" "+KW[it.id];
   if(CHART[it.id]) it.chart=CHART[it.id];
+  if(SOURCE_UPDATES[it.id]) it.src=SOURCE_UPDATES[it.id];
+  if(ITEM_ORDER_UPDATES[it.id]) it.orders=ITEM_ORDER_UPDATES[it.id];
 });
 (DB.items.find(x=>x.id===3)||{}).calc=true;
 
-function norm(s){return (s||"").replace(/["'׳״]/g,"").toLowerCase();}
-function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function norm(s){return (s||"").replace(/["'׳״]/g,"").toLocaleLowerCase('he-IL');}
+function esc(s){return String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));}
 function displaySource(s){return (s||"").replace(/פ"מ 35\.0402/g,'פ״מ 04.101 (לשעבר 35.0402)');}
 function displayOrderNum(o){return o.displayNum||o.num;}
 
 function highlight(htmlStr, t){
   if(!t) return htmlStr;
-  const words = norm(t).split(/\s+/).filter(w=>w.length>1);
+  const words = String(t).toLocaleLowerCase('he-IL').split(/\s+/).filter(w=>w.length>1).sort((a,b)=>b.length-a.length);
   if(!words.length) return htmlStr;
-  // highlight only inside text nodes
   const div=document.createElement('div'); div.innerHTML=htmlStr;
   const walk=document.createTreeWalker(div,NodeFilter.SHOW_TEXT);
   const nodes=[]; while(walk.nextNode()) nodes.push(walk.currentNode);
   nodes.forEach(n=>{
-    let txt=n.nodeValue, low=norm(txt), hit=false, out='', i=0;
-    while(i<txt.length){
-      let matched=false;
-      for(const w of words){
-        if(low.substr(i,w.length)===w){out+='<mark>'+esc(txt.substr(i,w.length))+'</mark>';i+=w.length;matched=true;hit=true;break;}
-      }
-      if(!matched){out+=esc(txt[i]);i++;}
+    const txt=n.nodeValue, low=txt.toLocaleLowerCase('he-IL');
+    let at=0, hit=false; const frag=document.createDocumentFragment();
+    while(at<txt.length){
+      let next=-1, word='';
+      words.forEach(w=>{const pos=low.indexOf(w,at);if(pos!==-1&&(next===-1||pos<next)){next=pos;word=w;}});
+      if(next===-1) break;
+      if(next>at) frag.append(document.createTextNode(txt.slice(at,next)));
+      const mark=document.createElement('mark'); mark.textContent=txt.slice(next,next+word.length); frag.append(mark);
+      at=next+word.length; hit=true;
     }
-    if(hit){const s=document.createElement('span');s.innerHTML=out;n.replaceWith(s);}
+    if(hit){if(at<txt.length)frag.append(document.createTextNode(txt.slice(at)));n.replaceWith(frag);}
   });
   return div.innerHTML;
 }
 
 function buildChips(){
   const el=document.getElementById('chips');
-  let h='<button type="button" class="chip'+(activeCat==="all"?" active":"")+'" data-c="all" aria-pressed="'+(activeCat==="all")+'">הכול</button>';
+  let h='<button type="button" class="chip active" data-c="all" aria-pressed="true">הכול</button>';
   DB.categories.forEach(c=>{
-    h+='<button type="button" class="chip'+(activeCat===c.id?" active":"")+'" data-c="'+c.id+'" aria-pressed="'+(activeCat===c.id)+'">'+LET[c.id]+'. '+c.name+'</button>';
+    h+='<button type="button" class="chip" data-c="'+c.id+'" aria-pressed="false">'+SHORT_CAT[c.id]+'</button>';
   });
   el.innerHTML=h;
-  el.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{activeCat=ch.dataset.c;buildChips();render(false);});
+  el.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
+    activeCat=ch.dataset.c;
+    el.querySelectorAll('.chip').forEach(b=>{const on=b.dataset.c===activeCat;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on);});
+    render(false);
+  });
 }
 
 // Does a query word match a haystack — directly or via a synonym group?
 function wordMatches(w, hay){
-  if(hay.includes(w)) return true;
   if(w.length<2) return false;
+  if(hay.includes(w)) return true;
   for(const g of SYNN){
     if(g.some(t=> t===w || (t.length>=2 && (t.includes(w)||w.includes(t))) )){
       if(g.some(t=> t.length>1 && hay.includes(t))) return true;
@@ -480,7 +865,26 @@ function scoreItem(it, words){
 }
 function stripTags(h){return h.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();}
 
-// AI-style instant summary card above the results.
+function syncChipState(){
+  document.querySelectorAll('#chips .chip').forEach(b=>{const on=b.dataset.c===activeCat;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on);});
+}
+
+function goToItem(id, updateHash=true){
+  const item=DB.items.find(x=>x.id===Number(id));
+  if(!item) return;
+  OPEN.add(item.id);
+  term=""; activeCat="all";
+  const input=document.getElementById('q'); if(input) input.value="";
+  syncChipState(); render(false);
+  requestAnimationFrame(()=>{
+    const card=document.getElementById('q-'+item.id); if(!card)return;
+    card.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'center'});
+    const button=card.querySelector('.qtitle>button'); if(button)button.focus({preventScroll:true});
+    if(updateHash) history.replaceState(null,'','#q-'+item.id);
+  });
+}
+
+// Best matching result shown above the filtered list.
 function quickAnswer(list, words){
   const box=document.getElementById('quick');
   if(!term || !list.length){ box.hidden=true; box.innerHTML=''; return; }
@@ -488,17 +892,10 @@ function quickAnswer(list, words){
   list.forEach(it=>{ const sc=scoreItem(it,words); if(sc>bs){bs=sc;best=it;} });
   box.hidden=false;
   box.innerHTML='<div class="qa"><div class="qa-h">'
-    +'<span class="qa-badge">✦ תשובה מהירה</span><span class="qa-ref">מבוסס על שאלה '+best.id+'</span></div>'
+    +'<span class="qa-badge">התוצאה המובילה</span><span class="qa-ref">שאלה '+best.id+'</span></div>'
     +'<div class="qa-body">'+esc(best.sum||stripTags(best.a).slice(0,200))+'</div>'
     +'<button class="qa-link" type="button" data-go="'+best.id+'">לתשובה המלאה ↓</button></div>';
-  box.querySelector('.qa-link').onclick=()=>{
-    const card=document.querySelector('.card[data-id="'+best.id+'"]');
-    if(!card) return;
-    card.classList.add('open','in');
-    const b=card.querySelector('button'); if(b) b.setAttribute('aria-expanded','true');
-    const ans=card.querySelector('.ans'); if(ans){ans.setAttribute('aria-hidden','false');ans.removeAttribute('inert');}
-    card.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'center'});
-  };
+  box.querySelector('.qa-link').onclick=()=>goToItem(best.id);
 }
 
 // Horizontal bar chart (CSS bars — responsive, theme-aware, no libraries).
@@ -523,16 +920,16 @@ const CEIL=6861; // full ceiling for the "אם לילד" example
 function calcAmt(p){ return p===100?CEIL:Math.round(p/100*CEIL/10)*10; }
 function calcWidget(){
   return '<div class="calc"><div class="calc-h">בדקו לבד — כמה בחודש? הזינו את הכנסת בן/בת הזוג (ברוטו, ₪):</div>'
-    +'<input class="calc-in" type="number" inputmode="numeric" min="0" step="100" placeholder="למשל 9,000" aria-label="הכנסה חודשית ברוטו">'
-    +'<div class="calc-out"><span class="calc-pct">—</span><span class="calc-note">הזינו סכום לחישוב מקורב</span></div>'
-    +'<div class="calc-fine">הערכה להמחשה בלבד לפי דוגמת ״אם לילד״ (תקרה 6,861 ₪). החישוב המחייב — במחשבון הרשמי של הקבוצה.</div></div>';
+    +'<input class="calc-in" type="number" inputmode="numeric" min="0" step="100" placeholder="למשל 9000" aria-label="הכנסה חודשית ברוטו">'
+    +'<div class="calc-out" role="status" aria-live="polite" aria-atomic="true"><span class="calc-pct">—</span><span class="calc-note">הזינו סכום לחישוב מקורב</span></div>'
+    +'<div class="calc-fine">הערכה להמחשה בלבד לפי דוגמת ״אם לילד״ (תקרה 6,861 ₪). לחישוב מלא השתמשו במחשבון הקבוצה; הזכאות נקבעת בידי משרד הת״ש.</div></div>';
 }
 function wireCalc(scope){
   scope.querySelectorAll('.calc').forEach(box=>{
     const inp=box.querySelector('.calc-in'), out=box.querySelector('.calc-pct'), note=box.querySelector('.calc-note');
     inp.addEventListener('input',()=>{
-      const v=parseFloat((inp.value||'').replace(/[^\d.]/g,''));
-      const p=calcPct(v);
+      const v=inp.value===''?NaN:inp.valueAsNumber;
+      const p=Number.isFinite(v)?calcPct(v):null;
       if(p===null){out.textContent='—';note.textContent='הזינו סכום לחישוב מקורב';return;}
       const amt=calcAmt(p);
       out.textContent=(p===100?amt.toLocaleString('he-IL'):(p===0?'0':'כ־'+amt.toLocaleString('he-IL')))+' ₪';
@@ -544,52 +941,67 @@ function wireCalc(scope){
 function ordChips(it){
   return (it.orders||[]).map(num=>{
     const o=DB.orders.find(x=>x.num===num); if(!o) return "";
-    return '<a class="ord" href="'+o.url+'" target="_blank" rel="noopener noreferrer" title="'+o.title.replace(/"/g,'&quot;')+'">📖 פ״מ '+displayOrderNum(o)+'</a>';
+    return '<a class="ord" href="'+o.url+'" target="_blank" rel="noopener noreferrer" title="'+esc(o.title)+'">פקודה '+esc(displayOrderNum(o))+' ↗</a>';
   }).join("");
+}
+
+const CAT_DESC = {
+  A:"זכאות, מבחן הכנסה, בקשות ומעקב",
+  B:"שכירות, משכנתא, חוזים ואחזקת דירה",
+  C:"מענקים, תווים, שוברים וסיוע נקודתי",
+  D:"נישואין, היריון, לידה ומצבים משפחתיים",
+  E:"ידועים בציבור, עבודה ומעמדי שירות",
+  F:"ארנונה, חשמל, ביטוח לאומי והשחרור"
+};
+
+function renderItem(it, headingLevel=4){
+  const open=OPEN.has(it.id);
+  const headingTag=headingLevel===3?'h3':'h4';
+  const q=highlight(esc(it.q),term);
+  const sum=it.sum?'<div class="sum">'+highlight(esc(it.sum),term)+'</div>':'';
+  const a=highlight(it.a,term);
+  const extra=(it.chart?renderChart(it.chart):'')+(it.calc?calcWidget():'');
+  return '<article class="card in'+(open?' open':'')+'" id="q-'+it.id+'" data-id="'+it.id+'">'
+    +'<'+headingTag+' class="qtitle"><button type="button" id="question-'+it.id+'" aria-expanded="'+open+'" aria-controls="answer-'+it.id+'">'
+    +'<span class="qhead"><span class="cattag">'+SHORT_CAT[it.cat]+' · שאלה '+it.id+'</span><span class="qtext">'+q+'</span></span>'
+    +'<span class="arrow" aria-hidden="true"></span><span class="qn" aria-hidden="true">'+String(it.id).padStart(2,'0')+'</span></button></'+headingTag+'>'
+    +'<div class="ans" id="answer-'+it.id+'" role="region" aria-labelledby="question-'+it.id+'" aria-hidden="'+(!open)+'"'+(open?'':' inert')+'>'
+    +'<div class="ans-in"><div class="ans-body">'+sum+a+extra
+    +'<div class="meta-row"><span class="src">'+esc(displaySource(it.src))+'</span>'+ordChips(it)+'</div>'
+    +'</div></div></div></article>';
 }
 
 function render(animate){
   const res=document.getElementById('results');
   const list=DB.items.filter(matches);
   const words = norm(term).split(/\s+/).filter(Boolean);
-  document.getElementById('count').textContent=
-    list.length+" מתוך "+DB.items.length+" שאלות"+(term?' · חיפוש: "'+term+'"':"");
+  document.getElementById('faqTotal').textContent=DB.items.length;
+  document.getElementById('count').textContent=list.length+" מתוך "+DB.items.length+" תשובות"+(term?' · חיפוש: "'+term+'"':"");
   quickAnswer(list, words);
   if(!list.length){res.innerHTML='<div class="empty">לא נמצאו תוצאות. נסו מילת חיפוש אחרת או בחרו קטגוריה.</div>';return;}
-  res.innerHTML=list.map(it=>{
-    const q=highlight(esc(it.q),term);
-    const sum=it.sum?'<div class="sum">'+highlight(esc(it.sum),term)+'</div>':'';
-    const a=highlight(it.a,term);
-    const extra=(it.chart?renderChart(it.chart):'')+(it.calc?calcWidget():'');
-    return '<div class="card" data-id="'+it.id+'">'
-      +'<button aria-expanded="false" aria-controls="answer-'+it.id+'"><span class="qn">'+it.id+'</span>'
-      +'<span class="qhead"><span class="cattag">'+LET[it.cat]+' · '+CATN[it.cat]+'</span>'
-      +'<span class="qtext">'+q+'</span></span>'
-      +'<span class="arrow"></span></button>'
-      +'<div class="ans" id="answer-'+it.id+'" aria-hidden="true" inert><div class="ans-in"><div class="ans-body">'+sum+a+extra
-      +'<div class="meta-row"><span class="src">'+esc(displaySource(it.src))+'</span>'+ordChips(it)+'</div>'
-      +'</div></div></div></div>';
-  }).join("");
-  res.querySelectorAll('.card>button').forEach(b=>b.onclick=()=>{
-    const c=b.parentElement, open=c.classList.toggle('open');
-    b.setAttribute('aria-expanded',open);
+  if(term){
+    res.innerHTML='<div class="faq-group search-group"><div class="faq-list">'+list.map(it=>renderItem(it,3)).join('')+'</div></div>';
+  }else{
+    const cats=activeCat==="all"?DB.categories:DB.categories.filter(c=>c.id===activeCat);
+    res.innerHTML=cats.map(c=>{
+      const items=list.filter(it=>it.cat===c.id); if(!items.length)return '';
+      return '<section class="faq-group" aria-labelledby="group-'+c.id+'"><div class="faq-group-head"><div><h3 id="group-'+c.id+'">'+esc(c.name)+'</h3><p>'+esc(CAT_DESC[c.id])+'</p></div><span class="group-count">'+items.length+' שאלות</span></div><div class="faq-list">'+items.map(it=>renderItem(it,4)).join('')+'</div></section>';
+    }).join('');
+  }
+  res.querySelectorAll('.qtitle>button').forEach(b=>b.onclick=()=>{
+    const c=b.closest('.card'), id=Number(c.dataset.id), open=!OPEN.has(id);
+    if(open)OPEN.add(id);else OPEN.delete(id);
+    c.classList.toggle('open',open); b.setAttribute('aria-expanded',open);
     const ans=c.querySelector('.ans'); ans.setAttribute('aria-hidden',!open); ans.toggleAttribute('inert',!open);
   });
-  // auto-open if searching and few results
-  if(term && list.length<=3) res.querySelectorAll('.card').forEach(c=>{
-    c.classList.add('open');
-    const b=c.querySelector('button'); if(b) b.setAttribute('aria-expanded','true');
-    const ans=c.querySelector('.ans'); if(ans){ans.setAttribute('aria-hidden','false');ans.removeAttribute('inert');}
-  });
   wireCalc(res);
-  reveal(res.querySelectorAll('.card'), animate);
 }
 
 function buildPanels(){
   document.getElementById('contacts').innerHTML=DB.contacts.map(c=>
     '<div class="row"><b>'+esc(c.name)+':</b> '+esc(c.detail)+'</div>').join("");
   document.getElementById('orders').innerHTML=DB.orders.map(o=>
-    '<div class="row"><a class="ord" href="'+o.url+'" target="_blank" rel="noopener noreferrer">📖 '+esc(displayOrderNum(o))+'</a> '
+    '<div class="row"><a class="ord" href="'+o.url+'" target="_blank" rel="noopener noreferrer">פקודה '+esc(displayOrderNum(o))+' ↗</a> '
     +'<b>'+esc(o.title)+'</b><br><span style="color:var(--text3);font-size:12px">'+esc(o.collection)+'</span></div>').join("");
 }
 
@@ -602,11 +1014,20 @@ function reveal(nodes, animate){
   requestAnimationFrame(()=>els.forEach(el=>el.classList.add('in')));
 }
 
-document.getElementById('q').addEventListener('input',e=>{term=e.target.value.trim();render(false);});
+let searchFrame=0;
+document.getElementById('q').addEventListener('input',e=>{
+  const value=e.target.value.trim();
+  cancelAnimationFrame(searchFrame);
+  searchFrame=requestAnimationFrame(()=>{term=value;render(false);});
+});
 
-buildChips(); buildPanels();
-reveal(document.querySelectorAll('.panel'), true);
-render(true);
+buildChips(); buildPanels(); render(true);
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goToItem(b.dataset.go)));
+document.querySelectorAll('[data-focus-search]').forEach(b=>b.addEventListener('click',()=>{
+  const input=document.getElementById('q'); input.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'center'}); input.focus({preventScroll:true});
+}));
+const initialHash=location.hash.match(/^#q-(\d+)$/);
+if(initialHash) requestAnimationFrame(()=>goToItem(initialHash[1],false));
 </script>
 </body>
 </html>
